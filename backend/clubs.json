@@ -1,0 +1,252 @@
+[
+  {
+    "club_id": 1,
+    "club_name": "TEDx",
+    "category": "Management & Creative",
+    "keywords": ["Event Management", "Curation", "Marketing", "Arts", "Design"],
+    "skills_required": ["Communication", "Creativity", "Leadership"],
+    "activities_type": ["Workshops", "Events", "Talks"],
+    "difficulty": "Intermediate",
+    "club_description": "TEDx focuses on event management, content curation, marketing, and creative arts/design."
+  },
+  {
+    "club_id": 2,
+    "club_name": "IEEE SB",
+    "category": "Technical",
+    "keywords": ["Robotics", "Coding", "Hackathons", "Marketing", "Communication"],
+    "skills_required": ["C++", "Python", "Robotics Basics"],
+    "activities_type": ["Competitions", "Workshops"],
+    "difficulty": "Intermediate",
+    "club_description": "IEEE SB is a technical club focused on robotics, coding events, hackathons, and communication skills."
+  },
+  {
+    "club_id": 3,
+    "club_name": "Aurora",
+    "category": "Cultural - Theatre",
+    "keywords": ["Theatre", "Acting", "Communication", "Mime", "Street Play", "Content Creation"],
+    "skills_required": ["Acting", "Confidence", "Creativity"],
+    "activities_type": ["Performances", "Workshops"],
+    "difficulty": "Beginner",
+    "club_description": "Aurora is a theatre club focusing on acting, mime, street plays, and creative content."
+  },
+  {
+    "club_id": 4,
+    "club_name": "BlackPearl",
+    "category": "Cultural - Theatre",
+    "keywords": ["Theatre", "Acting", "Mime", "Communication", "Street Play", "Content Creation"],
+    "skills_required": ["Acting", "Teamwork"],
+    "activities_type": ["Performances"],
+    "difficulty": "Beginner",
+    "club_description": "BlackPearl is a theatre club helping students improve communication through acting and performance arts."
+  },
+  {
+    "club_id": 5,
+    "club_name": "Drishya",
+    "category": "Cultural - Theatre",
+    "keywords": ["Theatre", "Drama", "Acting", "Communication", "Mime", "Street Play"],
+    "skills_required": ["Acting", "Public Speaking"],
+    "activities_type": ["Performances", "Workshops"],
+    "difficulty": "Beginner",
+    "club_description": "Drishya focuses on drama, theatre activities, street plays, and improving communication skills."
+  },
+  {
+    "club_id": 6,
+    "club_name": "Pathfinder",
+    "category": "Management",
+    "keywords": ["Event Management", "Communication", "Leadership"],
+    "skills_required": ["Planning", "Coordination"],
+    "activities_type": ["Events", "Workshops"],
+    "difficulty": "Beginner",
+    "club_description": "Pathfinder is focused on event management and improving communication skills."
+  },
+  {
+    "club_id": 7,
+    "club_name": "Avalanche",
+    "category": "Management",
+    "keywords": ["Event Management", "Communication"],
+    "skills_required": ["Planning", "Teamwork"],
+    "activities_type": ["Events"],
+    "difficulty": "Beginner",
+    "club_description": "Avalanche focuses on event planning and communication skill development."
+  },
+  {
+    "club_id": 8,
+    "club_name": "Decoders",
+    "category": "Technical",
+    "keywords": ["Coding", "Hackathons", "Programming Competitions"],
+    "skills_required": ["Python", "Java", "DSA"],
+    "activities_type": ["Coding Contests", "Hackathons"],
+    "difficulty": "Intermediate",
+    "club_description": "Decoders conducts coding competitions and hackathons for programmers."
+  },
+  {
+    "club_id": 9,
+    "club_name": "SARK",
+    "category": "Technical",
+    "keywords": ["Coding", "Hackathons", "Programming"],
+    "skills_required": ["C++", "DSA"],
+    "activities_type": ["Hackathons", "Workshops"],
+    "difficulty": "Intermediate",
+    "club_description": "SARK is a coding club organizing programming contests and hackathons."
+  },
+  {
+    "club_id": 10,
+    "club_name": "GeeksforGeeks SIT",
+    "category": "Technical",
+    "keywords": ["Coding", "Competitions", "Problem Solving"],
+    "skills_required": ["DSA", "Data Structures"],
+    "activities_type": ["Coding Contests", "Learning Sessions"],
+    "difficulty": "Intermediate",
+    "club_description": "GeeksforGeeks SIT helps students improve coding through contests and problem-solving sessions."
+  },
+  {
+    "club_id": 11,
+    "club_name": "Research Gate",
+    "category": "Technical / Research",
+    "keywords": ["Research", "Coding", "Problem Solving"],
+    "skills_required": ["Python", "Research Writing"],
+    "activities_type": ["Workshops"],
+    "difficulty": "Intermediate",
+    "club_description": "Research Gate promotes research, coding, and academic problem-solving."
+  },
+  {
+    "club_id": 12,
+    "club_name": "Quest",
+    "category": "Technical",
+    "keywords": ["Coding", "Hackathons"],
+    "skills_required": ["DSA"],
+    "activities_type": ["Coding Contests"],
+    "difficulty": "Intermediate",
+    "club_description": "Quest organizes coding competitions and hackathons for enthusiasts."
+  },
+  {
+    "club_id": 13,
+    "club_name": "Sigma",
+    "category": "Technical",
+    "keywords": ["Coding", "Competition"],
+    "skills_required": ["Java", "DSA"],
+    "activities_type": ["Hackathons"],
+    "difficulty": "Intermediate",
+    "club_description": "Sigma supports coding practice through contests and competitive events."
+  },
+  {
+    "club_id": 14,
+    "club_name": "Script Ink",
+    "category": "Literary",
+    "keywords": ["Writing", "Creative Thinking"],
+    "skills_required": ["Writing", "Creativity"],
+    "activities_type": ["Writing Events"],
+    "difficulty": "Beginner",
+    "club_description": "Script Ink is a literary club for creative writing and storytelling."
+  },
+  {
+    "club_id": 15,
+    "club_name": "DebSoc",
+    "category": "Communication",
+    "keywords": ["Debate", "Public Speaking", "Communication"],
+    "skills_required": ["Speaking", "Critical Thinking"],
+    "activities_type": ["Debates", "Meetups"],
+    "difficulty": "Intermediate",
+    "club_description": "DebSoc improves communication and debating skills through structured events."
+  },
+  {
+    "club_id": 16,
+    "club_name": "Destiny",
+    "category": "Music",
+    "keywords": ["Singing", "Music"],
+    "skills_required": ["Vocals"],
+    "activities_type": ["Performances"],
+    "difficulty": "Beginner",
+    "club_description": "Destiny is a music club that nurtures singers and musicians."
+  },
+  {
+    "club_id": 17,
+    "club_name": "Panthers",
+    "category": "Dance",
+    "keywords": ["Dance", "Choreography"],
+    "skills_required": ["Dancing"],
+    "activities_type": ["Performances"],
+    "difficulty": "Beginner",
+    "club_description": "Panthers is a dance club focusing on choreography and performances."
+  },
+  {
+    "club_id": 18,
+    "club_name": "Vulcans",
+    "category": "Dance",
+    "keywords": ["Dance", "Choreography"],
+    "skills_required": ["Dancing"],
+    "activities_type": ["Cultural Events"],
+    "difficulty": "Beginner",
+    "club_description": "Vulcans is a cultural dance club with emphasis on team performances."
+  },
+  {
+    "club_id": 19,
+    "club_name": "Adlib",
+    "category": "Media",
+    "keywords": ["Photography", "Videography", "Filmmaking"],
+    "skills_required": ["Photography", "Editing"],
+    "activities_type": ["Workshops"],
+    "difficulty": "Beginner",
+    "club_description": "Adlib specializes in photography, videography, and filmmaking."
+  },
+  {
+    "club_id": 20,
+    "club_name": "AI Brewery",
+    "category": "Technical - AI",
+    "keywords": ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Data Science", "Coding", "Hackathons"],
+    "skills_required": ["Python", "ML Basics"],
+    "activities_type": ["Hackathons", "Workshops"],
+    "difficulty": "Intermediate",
+    "club_description": "AI Brewery is a dedicated AI/ML club that organizes hackathons and learning sessions."
+  },
+  {
+    "club_id": 21,
+    "club_name": "Soaring Eagles",
+    "category": "Technical - Aeronautics",
+    "keywords": ["Aeronautics", "Drones"],
+    "skills_required": ["Mechanical Basics", "Robotics"],
+    "activities_type": ["Workshops"],
+    "difficulty": "Intermediate",
+    "club_description": "Soaring Eagles focuses on aeronautics, drone-making, and aviation technologies."
+  },
+  {
+    "club_id": 22,
+    "club_name": "Corsit",
+    "category": "Technical - Robotics",
+    "keywords": ["Robotics", "Hardware", "Electronics"],
+    "skills_required": ["Arduino", "Soldering"],
+    "activities_type": ["Workshops"],
+    "difficulty": "Intermediate",
+    "club_description": "Corsit is a robotics and hardware innovation club."
+  },
+  {
+    "club_id": 23,
+    "club_name": "Auto Architects",
+    "category": "Technical - Automobile",
+    "keywords": ["Automobile", "Engineering Design", "Fabrication"],
+    "skills_required": ["Mechanical Skills"],
+    "activities_type": ["Projects"],
+    "difficulty": "Advanced",
+    "club_description": "Auto Architects focuses on automobile engineering, design, and fabrication."
+  },
+  {
+    "club_id": 24,
+    "club_name": "Adrenaline Racing",
+    "category": "Technical - Automobile",
+    "keywords": ["Automobiles", "Racing", "Fabrication"],
+    "skills_required": ["Mechanical Engineering"],
+    "activities_type": ["Competitions"],
+    "difficulty": "Advanced",
+    "club_description": "Adrenaline Racing builds and races automobiles for competitions."
+  },
+  {
+    "club_id": 25,
+    "club_name": "Quizzing Inc",
+    "category": "Logical & GK",
+    "keywords": ["Quiz", "Logical Thinking", "Trivia"],
+    "skills_required": ["Logical Reasoning"],
+    "activities_type": ["Quiz Competitions"],
+    "difficulty": "Beginner",
+    "club_description": "Quizzing Inc conducts quiz competitions and promotes logical thinking."
+  }
+]

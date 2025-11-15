@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT4U - Your Campus Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/navbar.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        
+        
+
+        /* Main Content */
+        .main-content {
+            padding-top: 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 60px;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-section h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .welcome-section p {
+            font-size: 1.3rem;
+            opacity: 0.7;
+            font-weight: 300;
+        }
+
+        /* Feature Cards Container */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Feature Card Base Styles */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 94, 0, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 94, 0, 0.3);
+            border-color: #FF5E00;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #FF5E00;
+        }
+
+        .card-description {
+            opacity: 0.8;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Individual Card Layouts */
+        .timetable-card {
+            grid-column: span 7;
+            background: linear-gradient(135deg, rgba(255, 94, 0, 0.05), rgba(0, 178, 255, 0.05));
+        }
+
+        .sittoday-card {
+            grid-column: span 5;
+            background: linear-gradient(135deg, rgba(0, 178, 255, 0.05), rgba(255, 94, 0, 0.05));
+        }
+
+        .lost-found-card {
+            grid-column: span 5;
+            background: linear-gradient(225deg, rgba(255, 94, 0, 0.05), rgba(0, 178, 255, 0.05));
+            transform: rotate(-1deg);
+        }
+
+        .lost-found-card:hover {
+            transform: rotate(0deg) translateY(-10px);
+        }
+
+        .buysell-card {
+            grid-column: span 7;
+            background: linear-gradient(225deg, rgba(0, 178, 255, 0.05), rgba(255, 94, 0, 0.05));
+            transform: rotate(1deg);
+        }
+
+        .buysell-card:hover {
+            transform: rotate(0deg) translateY(-10px);
+        }
+
+        /* Mini Cards inside Timetable */
+        .upcoming-classes {
+            margin-top: 20px;
+        }
+
+        .class-item {
+            background: rgba(255, 94, 0, 0.1);
+            border-left: 3px solid #FF5E00;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .class-item:hover {
+            background: rgba(255, 94, 0, 0.2);
+            transform: translateX(5px);
+        }
+
+        .class-time {
+            color: #00B2FF;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .class-name {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Events List */
+        .events-list {
+            margin-top: 20px;
+        }
+
+        .event-item {
+            background: rgba(0, 178, 255, 0.1);
+            border-left: 3px solid #00B2FF;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .event-item:hover {
+            background: rgba(0, 178, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .event-title {
+            color: #FF5E00;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .event-time {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Action Button */
+        .card-action {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            border: none;
+            color: white;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .card-action:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 94, 0, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timetable-card,
+            .sittoday-card,
+            .lost-found-card,
+            .buysell-card {
+                grid-column: span 1;
+                transform: rotate(0deg) !important;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .welcome-section h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .welcome-section h1 {
+                font-size: 2rem;
+            }
+
+            .welcome-section p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #FF5E00;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+  <script>
+    fetch("/navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("navbar-container").innerHTML = html;
+      });
+
+    function navigateTo(page) {
+      window.location.href = page + ".html";
+    }
+  </script>
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-text">SIT4U</div>
+            <ul class="nav-links">
+
+    <!-- Connect (HTML PAGE) -->
+    <li><a href="connect.html" class="nav-btn">Connect</a></li>
+
+    <!-- Classroom (REACT PAGE) -->
+    <li><a href="/class-resources" class="nav-btn">Classroom</a></li>
+
+    <!-- Notification (HTML PAGE) -->
+    <li style="position: relative;">
+        <a href="location.html" class="nav-btn">
+            Notification
+            <span class="notification-badge">3</span>
+        </a>
+    </li>
+
+    <!-- Dropdown (HTML PAGES) -->
+    <li class="dropdown">
+        <a href="#" class="nav-btn">SIT4U ▼</a>
+        <div class="dropdown-content">
+
+            <button class="dropdown-btn" onclick="navigateTo('clubs')">Clubs</button>
+            <button class="dropdown-btn" onclick="navigateTo('location')">Placement</button>
+            <button class="dropdown-btn" onclick="navigateTo('faculty')">Faculty</button>
+            <button class="dropdown-btn" onclick="navigateTo('connect')">SITUnknown</button>
+            <button class="dropdown-btn" onclick="navigateTo('health')">Health Center</button>
+            <button class="dropdown-btn" onclick="navigateTo('sports')">Sports</button>
+
+        </div>
+    </li>
+</ul>
+
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="welcome-section">
+            <h1>Welcome to SIT4U</h1>
+            <p>Your one-stop campus hub for everything you need</p>
+        </div>
+
+        <div class="features-grid">
+            <!-- Timetable Analyser -->
+            <div class="feature-card timetable-card">
+                <div class="card-icon">📅</div>
+                <h2 class="card-title">Timetable Analyser</h2>
+                <p class="card-description">Your upcoming classes and assignments at a glance</p>
+                
+                <div class="upcoming-classes">
+                    <h3 style="color: #00B2FF; margin-bottom: 15px;">Today's Schedule</h3>
+                    <div class="class-item">
+                        <div class="class-time">10:00 AM - 11:00 AM</div>
+                        <div class="class-name">Data Structures - Room 301</div>
+                    </div>
+                    <div class="class-item">
+                        <div class="class-time">11:30 AM - 12:30 PM</div>
+                        <div class="class-name">Web Development - Lab 2</div>
+                    </div>
+                    <div class="class-item">
+                        <div class="class-time">2:00 PM - 3:00 PM</div>
+                        <div class="class-name">Machine Learning - Room 205</div>
+                    </div>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255, 94, 0, 0.15); border-radius: 5px;">
+                        <strong style="color: #FF5E00;">Due Today:</strong> DS Assignment #3, Web Dev Project
+                    </div>
+                </div>
+                <button class="card-action" onclick="navigateTo('timetable')">View Full Timetable</button>
+            </div>
+
+            <!-- SIT Today -->
+            <div class="feature-card sittoday-card">
+                <div class="card-icon">🎯</div>
+                <h2 class="card-title">SIT Today</h2>
+                <p class="card-description">What's happening on campus today</p>
+                
+                <div class="events-list">
+                    <div class="event-item">
+                        <div class="event-title">Tech Talk: AI in Healthcare</div>
+                        <div class="event-time">3:00 PM - Auditorium</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-title">Hackathon Registration Open</div>
+                        <div class="event-time">All Day - Online</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-title">Basketball Tournament</div>
+                        <div class="event-time">4:30 PM - Sports Complex</div>
+                    </div>
+                </div>
+                <button class="card-action" onclick="navigateTo('sittoday')">View All Events</button>
+            </div>
+
+            <!-- Lost Your Thing -->
+            <div class="feature-card lost-found-card">
+                <div class="card-icon">🔍</div>
+                <h2 class="card-title">Lost Your Thing?</h2>
+                <p class="card-description">Report lost items or help others find theirs. Upload images and descriptions to reconnect with your belongings.</p>
+                <div style="margin-top: 20px; padding: 15px; background: rgba(255, 94, 0, 0.1); border-radius: 5px;">
+                    <strong>Recent Posts:</strong> 3 new lost items reported today
+                </div>
+                <button class="card-action" onclick="navigateTo('lostfound')">Browse Lost & Found</button>
+            </div>
+
+            <!-- Buy/Sell -->
+            <div class="feature-card buysell-card">
+                <div class="card-icon">🛒</div>
+                <h2 class="card-title">Buy & Sell</h2>
+                <p class="card-description">Campus marketplace for students. Buy or sell textbooks, uniforms, electronics, and more. Connect with fellow students for great deals!</p>
+                <div style="margin-top: 20px; padding: 15px; background: rgba(0, 178, 255, 0.1); border-radius: 5px;">
+                    <strong>Popular Items:</strong> Khaki Uniforms, Engineering Books, Lab Coats
+                </div>
+                <button class="card-action" onclick="navigateTo('buysell')">Visit Marketplace</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+  function navigateTo(page) {
+      window.location.href = `${page}.html`;
+  }
+</script>
+</body>
+</html>

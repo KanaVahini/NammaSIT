@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Directory - College of Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/navbar.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, transparent 2%, rgba(255, 94, 0, 0.03) 2%, rgba(255, 94, 0, 0.03) 3%, transparent 3%),
+                radial-gradient(circle at 75% 75%, transparent 2%, rgba(0, 178, 255, 0.03) 2%, rgba(0, 178, 255, 0.03) 3%, transparent 3%);
+            background-size: 80px 80px;
+            animation: grid-move 30s linear infinite;
+            z-index: -2;
+        }
+
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(80px, 80px); }
+        }
+
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 94, 0, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(0, 178, 255, 0.15) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        #particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .particle::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #FF5E00;
+            box-shadow: 0 0 10px #FF5E00;
+            animation: float-up 15s linear infinite;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 94, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-family: 'Orbitron', monospace;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            opacity: 1;
+            color: #FF5E00;
+        }
+
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #FF5E00;
+            box-shadow: 0 10px 40px rgba(255, 94, 0, 0.3);
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filters-section {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #FF5E00;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 94, 0, 0.3);
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            font-family: 'Rajdhani', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: #FF5E00;
+            box-shadow: 0 0 20px rgba(255, 94, 0, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .department-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .dept-tab {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dept-tab:hover {
+            background: rgba(255, 94, 0, 0.1);
+            border-color: #FF5E00;
+        }
+
+        .dept-tab.active {
+            background: linear-gradient(45deg, rgba(255, 94, 0, 0.3), rgba(0, 178, 255, 0.3));
+            border-color: #FF5E00;
+            box-shadow: 0 0 20px rgba(255, 94, 0, 0.3);
+        }
+
+        .faculty-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .faculty-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+            border-color: #FF5E00;
+            box-shadow: 0 10px 40px rgba(255, 94, 0, 0.3);
+        }
+
+        .faculty-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .faculty-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .faculty-info {
+            flex: 1;
+        }
+
+        .faculty-name {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .faculty-designation {
+            color: #FF5E00;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .faculty-department {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .faculty-details {
+            margin-top: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .detail-icon {
+            color: #FF5E00;
+            font-size: 1.1rem;
+        }
+
+        .faculty-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 94, 0, 0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00B2FF;
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .research-areas {
+            margin-top: 15px;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .research-tag {
+            background: rgba(0, 178, 255, 0.1);
+            border: 1px solid rgba(0, 178, 255, 0.3);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 94, 0, 0.2);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .copyright {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+  <script>
+    fetch("/navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("navbar-container").innerHTML = html;
+      });
+
+    function navigateTo(page) {
+      window.location.href = page + ".html";
+    }
+  </script>
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div id="particles"></div>
+
+    <nav>
+        <div class="nav-container">
+            <span class="logo-text">FACULTY DIRECTORY</span>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#departments">Departments</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div>
+            <h1>Faculty Directory</h1>
+            <p>Discover our world-class faculty members and their groundbreaking research</p>
+        </div>
+    </section>
+
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="stat-number">227</div>
+            <div class="stat-label">Faculty Members</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3,498</div>
+            <div class="stat-label">Publications</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">65</div>
+            <div class="stat-label">Patents</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">29,934</div>
+            <div class="stat-label">Citations</div>
+        </div>
+    </div>
+
+    <div class="filters-section" id="departments">
+        <div class="department-tabs">
+            <div class="dept-tab active" data-dept="all">All Departments</div>
+            <div class="dept-tab" data-dept="CSE">Computer Science</div>
+            <div class="dept-tab" data-dept="ECE">Electronics & Comm.</div>
+            <div class="dept-tab" data-dept="EEE">Electrical</div>
+            <div class="dept-tab" data-dept="ME">Mechanical</div>
+            <div class="dept-tab" data-dept="CE">Civil</div>
+            <div class="dept-tab" data-dept="CHE">Chemical</div>
+            <div class="dept-tab" data-dept="BT">Biotechnology</div>
+        </div>
+
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label>Search Faculty</label>
+                <input type="text" id="searchInput" placeholder="Search by name or research area...">
+            </div>
+            <div class="filter-group">
+                <label>Filter by Designation</label>
+                <select id="designationFilter">
+                    <option value="all">All Designations</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Associate Professor">Associate Professor</option>
+                    <option value="Assistant Professor">Assistant Professor</option>
+                    <option value="Principal">Principal</option>
+                    <option value="Director">Director</option>
+                    <option value="HOD">Head of Department</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="faculty-grid" id="facultyGrid"></div>
+
+    <footer>
+        <p class="copyright">© 2025 College of Engineering. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const facultyData = [
+            {
+                name: "Dr. Rajesh Kumar",
+                designation: "Professor",
+                department: "CSE",
+                email: "rajesh.kumar@college.edu",
+                phone: "+91-9876543210",
+                publications: 87,
+                citations: 2456,
+                patents: 8,
+                researchAreas: ["Artificial Intelligence", "Machine Learning", "Deep Learning"]
+            },
+            {
+                name: "Dr. Priya Sharma",
+                designation: "Associate Professor",
+                department: "ECE",
+                email: "priya.sharma@college.edu",
+                phone: "+91-9876543211",
+                publications: 54,
+                citations: 1823,
+                patents: 5,
+                researchAreas: ["VLSI Design", "Signal Processing", "IoT"]
+            },
+            {
+                name: "Dr. Amit Patel",
+                designation: "Professor",
+                department: "EEE",
+                email: "amit.patel@college.edu",
+                phone: "+91-9876543212",
+                publications: 92,
+                citations: 3145,
+                patents: 12,
+                researchAreas: ["Power Systems", "Renewable Energy", "Smart Grids"]
+            },
+            {
+                name: "Dr. Sneha Reddy",
+                designation: "Assistant Professor",
+                department: "CSE",
+                email: "sneha.reddy@college.edu",
+                phone: "+91-9876543213",
+                publications: 32,
+                citations: 876,
+                patents: 3,
+                researchAreas: ["Data Science", "Big Data Analytics", "Cloud Computing"]
+            },
+            {
+                name: "Dr. Vikram Singh",
+                designation: "Professor",
+                department: "ME",
+                email: "vikram.singh@college.edu",
+                phone: "+91-9876543214",
+                publications: 78,
+                citations: 2234,
+                patents: 9,
+                researchAreas: ["Robotics", "Manufacturing", "CAD/CAM"]
+            },
+            {
+                name: "Dr. Anita Verma",
+                designation: "Associate Professor",
+                department: "CE",
+                email: "anita.verma@college.edu",
+                phone: "+91-9876543215",
+                publications: 45,
+                citations: 1456,
+                patents: 4,
+                researchAreas: ["Structural Engineering", "Earthquake Engineering", "Construction Technology"]
+            },
+            {
+                name: "Dr. Suresh Gupta",
+                designation: "Professor",
+                department: "CHE",
+                email: "suresh.gupta@college.edu",
+                phone: "+91-9876543216",
+                publications: 65,
+                citations: 1987,
+                patents: 7,
+                researchAreas: ["Process Engineering", "Chemical Reactors", "Environmental Engineering"]
+            },
+            {
+                name: "Dr. Meera Iyer",
+                designation: "Assistant Professor",
+                department: "BT",
+                email: "meera.iyer@college.edu",
+                phone: "+91-9876543217",
+                publications: 28,
+                citations: 654,
+                patents: 2,
+                researchAreas: ["Genetic Engineering", "Bioinformatics", "Molecular Biology"]
+            },
+            {
+                name: "Dr. Karthik Menon",
+                designation: "Associate Professor",
+                department: "CSE",
+                email: "karthik.menon@college.edu",
+                phone: "+91-9876543218",
+                publications: 56,
+                citations: 1678,
+                patents: 6,
+                researchAreas: ["Cybersecurity", "Blockchain", "Network Security"]
+            },
+            {
+                name: "Dr. Divya Nair",
+                designation: "Assistant Professor",
+                department: "ECE",
+                email: "divya.nair@college.edu",
+                phone: "+91-9876543219",
+                publications: 35,
+                citations: 923,
+                patents: 3,
+                researchAreas: ["Embedded Systems", "Wireless Communication", "5G Technology"]
+            },
+            {
+                name: "Dr. Arun Kumar",
+                designation: "HOD",
+                department: "EEE",
+                email: "arun.kumar@college.edu",
+                phone: "+91-9876543220",
+                publications: 102,
+                citations: 3567,
+                patents: 14,
+                researchAreas: ["Electric Vehicles", "Power Electronics", "Energy Storage"]
+            },
+            {
+                name: "Dr. Lakshmi Devi",
+                designation: "Professor",
+                department: "ME",
+                email: "lakshmi.devi@college.edu",
+                phone: "+91-9876543221",
+                publications: 71,
+                citations: 2145,
+                patents: 8,
+                researchAreas: ["Thermal Engineering", "Heat Transfer", "Combustion"]
+            }
+        ];
+
+        let filteredData = [...facultyData];
+
+        function getInitials(name) {
+            return name.split(' ').map(n => n[0]).join('').slice(0, 2);
+        }
+
+        function createFacultyCard(faculty) {
+            return `
+                <div class="faculty-card" data-dept="${faculty.department}" data-designation="${faculty.designation}">
+                    <div class="faculty-header">
+                        <div class="faculty-avatar">${getInitials(faculty.name)}</div>
+                        <div class="faculty-info">
+                            <div class="faculty-name">${faculty.name}</div>
+                            <div class="faculty-designation">${faculty.designation}</div>
+                            <div class="faculty-department">${getDepartmentName(faculty.department)}</div>
+                        </div>
+                    </div>
+                    <div class="faculty-details">
+                        <div class="detail-row">
+                            <span class="detail-icon">📧</span>
+                            <span>${faculty.email}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-icon">📱</span>
+                            <span>${faculty.phone}</span>
+                        </div>
+                    </div>
+                    <div class="faculty-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">${faculty.publications}</span>
+                            <span class="stat-text">Publications</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">${faculty.citations}</span>
+                            <span class="stat-text">Citations</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">${faculty.patents}</span>
+                            <span class="stat-text">Patents</span>
+                        </div>
+                    </div>
+                    <div class="research-areas">
+                        <div class="research-tags">
+                            ${faculty.researchAreas.map(area => `<span class="research-tag">${area}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getDepartmentName(dept) {
+            const names = {
+                'CSE': 'Computer Science & Engineering',
+                'ECE': 'Electronics & Communication Engineering',
+                'EEE': 'Electrical & Electronics Engineering',
+                'ME': 'Mechanical Engineering',
+                'CE': 'Civil Engineering',
+                'CHE': 'Chemical Engineering',
+                'BT': 'Biotechnology'
+            };
+            return names[dept] || dept;
+        }
+
+        function renderFaculty() {
+            const grid = document.getElementById('facultyGrid');
+            grid.innerHTML = filteredData.map(createFacultyCard).join('');
+        }
+
+        function filterFaculty() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const designation = document.getElementById('designationFilter').value;
+            const activeDept = document.querySelector('.dept-tab.active').dataset.dept;
+
+            filteredData = facultyData.filter(faculty => {
+                const matchesSearch = faculty.name.toLowerCase().includes(searchTerm) ||
+                                    faculty.researchAreas.some(area => area.toLowerCase().includes(searchTerm));
+                const matchesDesignation = designation === 'all' || faculty.designation === designation;
+                const matchesDept = activeDept === 'all' || faculty.department === activeDept;
+
+                return matchesSearch && matchesDesignation && matchesDept;
+            });
+
+            renderFaculty();
+        }
+
+        document.querySelectorAll('.dept-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.dept-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                filterFaculty();
+            });
+        });
+
+        document.getElementById('searchInput').addEventListener('input', filterFaculty);
+        document.getElementById('designationFilter').addEventListener('change', filterFaculty);
+
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
+        renderFaculty();
+    </script>
+</body>
+</html>

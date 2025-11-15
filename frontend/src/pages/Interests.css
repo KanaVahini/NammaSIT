@@ -1,0 +1,160 @@
+/* ========== Interests Wrapper ========== */
+.interests-wrapper {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ========== Title ========== */
+.interests-title {
+  text-align: center;
+  font-family: 'Orbitron', monospace;
+  font-size: 3.4rem;
+  margin-bottom: 40px;
+  color: #90b7e1;
+  font-weight: 900;
+  letter-spacing: 2px;
+  position: relative;
+  
+  animation: floatText 3s ease-in-out infinite;
+}
+
+.interests-title::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: transparent;
+  -webkit-text-stroke: 2px #00B2FF;
+  z-index: -1;
+  filter: blur(4px);
+}
+
+.interests-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: transparent;
+  -webkit-text-stroke: 2px #FF5E00;
+  z-index: -2;
+  filter: blur(6px);
+}
+
+/* ========== Card ========== */
+.interest-card {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 25px rgba(0, 178, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 0.3s;
+}
+
+.interest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(0,178,255,0.35);
+}
+
+/* ========== Subtitle ========== */
+.interest-subtitle {
+  opacity: 0.85;
+  margin-bottom: 18px;
+  font-size: 0.92rem;
+}
+
+/* ========== Option Buttons ========== */
+.interest-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.option-btn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.option-btn:hover {
+  transform: scale(1.08) translateY(-3px);
+  background: rgba(255,255,255,0.18);
+  border-color: #00B2FF;
+  box-shadow: 0 0 12px rgba(0,178,255,0.6);
+}
+
+.option-btn.active {
+  background: linear-gradient(45deg, #FF5E00, #00B2FF);
+  box-shadow: 
+    0 0 25px rgba(255, 94, 0, 0.6), 
+    0 0 30px rgba(0,178,255,0.6);
+  transform: scale(1.14) translateY(-2px);
+}
+
+/* ========== Finish Button ========== */
+.finish-btn {
+  width: 260px;
+  margin: 20px auto;
+  display: block;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(45deg, #FF5E00, #00B2FF);
+  transition: 0.25s;
+}
+
+.finish-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(0,178,255,0.4);
+}
+
+/* CELEBRATION OVERLAY */
+.celebration-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 9999;
+  font-size: 2.6rem;
+  font-family: 'Orbitron', monospace;
+  animation: fadeIn 0.6s ease;
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px #FF5E00)
+            drop-shadow(0 0 12px #00B2FF);
+  }
+  50% {
+    filter: drop-shadow(0 0 14px #FF5E00)
+            drop-shadow(0 0 22px #00B2FF);
+  }
+}

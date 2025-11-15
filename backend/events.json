@@ -1,0 +1,112 @@
+[
+  {
+    "event_id": 1,
+    "event_name": "TEDTalk",
+    "category": "Motivational",
+    "tags": ["Motivation", "Inspiration", "Talks", "Communication"],
+    "event_type": "Seminar",
+    "difficulty_level": "Beginner",
+    "skills_required": ["Listening", "Communication"],
+    "description": "TEDTalk features inspirational and motivational speeches from speakers across domains."
+  },
+  {
+    "event_id": 2,
+    "event_name": "WIECode",
+    "category": "Technical - Coding",
+    "tags": ["Hackathon", "Coding", "Problem Solving"],
+    "event_type": "Hackathon",
+    "difficulty_level": "Intermediate",
+    "skills_required": ["Coding", "Teamwork"],
+    "description": "WIECode is a coding hackathon focused on innovation and practical problem solving."
+  },
+  {
+    "event_id": 3,
+    "event_name": "SIH",
+    "category": "Technical - Innovation",
+    "tags": ["Hackathon", "Coding", "Innovation"],
+    "event_type": "Hackathon",
+    "difficulty_level": "Advanced",
+    "skills_required": ["Coding", "Creativity", "Problem Solving"],
+    "description": "Smart India Hackathon (SIH) is a national-level hackathon involving real-world challenges."
+  },
+  {
+    "event_id": 4,
+    "event_name": "IDEEEAS",
+    "category": "Technical - Coding",
+    "tags": ["Coding Competition", "Robotics", "DSA"],
+    "event_type": "Competition",
+    "difficulty_level": "Intermediate",
+    "skills_required": ["Coding", "Robotics Basics"],
+    "description": "IDEEEAS is a technical event featuring robotics and coding-based competitions."
+  },
+  {
+    "event_id": 5,
+    "event_name": "Code Games",
+    "category": "Technical - Coding",
+    "tags": ["Coding Competition", "Programming", "Robotics"],
+    "event_type": "Competition",
+    "difficulty_level": "Intermediate",
+    "skills_required": ["Coding", "Logic Building"],
+    "description": "Code Games features competitive coding and robotics-based problem-solving challenges."
+  },
+  {
+    "event_id": 6,
+    "event_name": "RoboExpo",
+    "category": "Technical - Robotics",
+    "tags": ["Robotics", "Workshop", "Hardware"],
+    "event_type": "Workshop",
+    "difficulty_level": "Beginner",
+    "skills_required": ["Basic Electronics", "Robotics"],
+    "description": "RoboExpo is a hands-on robotics workshop showcasing automation and hardware projects."
+  },
+  {
+    "event_id": 7,
+    "event_name": "WritoFest",
+    "category": "Literary",
+    "tags": ["Writing", "Creative Thinking", "Open Mic"],
+    "event_type": "Competition",
+    "difficulty_level": "Beginner",
+    "skills_required": ["Writing", "Creativity"],
+    "description": "WritoFest features writing competitions and open mic sessions for creative expression."
+  },
+  {
+    "event_id": 8,
+    "event_name": "Marathon",
+    "category": "Sports",
+    "tags": ["Running", "Fitness", "Sports"],
+    "event_type": "Sports Event",
+    "difficulty_level": "Beginner",
+    "skills_required": ["Endurance"],
+    "description": "A campus marathon event encouraging fitness, stamina, and sportsmanship."
+  },
+  {
+    "event_id": 9,
+    "event_name": "Treasure Hunt",
+    "category": "Fun & Adventure",
+    "tags": ["Fun", "Teamwork", "Adventure"],
+    "event_type": "Game Event",
+    "difficulty_level": "Beginner",
+    "skills_required": ["Teamwork", "Logical Thinking"],
+    "description": "Treasure Hunt is a fun and adventurous campus event involving clues, tasks, and teamwork."
+  },
+  {
+    "event_id": 10,
+    "event_name": "Halcyon",
+    "category": "Cultural",
+    "tags": ["Dance", "Singing", "Drama", "Mime", "Theatre", "Skit"],
+    "event_type": "Cultural Fest",
+    "difficulty_level": "Beginner",
+    "skills_required": ["Creativity", "Performing Arts"],
+    "description": "Halcyon is a cultural festival featuring dance, music, theatre, mime, and dramatic performances."
+  },
+  {
+    "event_id": 11,
+    "event_name": "Spandana",
+    "category": "Cultural",
+    "tags": ["Dance", "Singing", "Drama", "Mime", "Street Play", "Performance"],
+    "event_type": "Cultural Fest",
+    "difficulty_level": "Beginner",
+    "skills_required": ["Artistic Skills", "Performance"],
+    "description": "Spandana is a cultural celebration showcasing singing, dancing, theatre, drama, and mime."
+  }
+]

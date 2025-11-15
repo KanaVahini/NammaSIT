@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT Campus - Lab Directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/navbar.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, transparent 2%, rgba(255, 94, 0, 0.03) 2%, rgba(255, 94, 0, 0.03) 3%, transparent 3%),
+                radial-gradient(circle at 75% 75%, transparent 2%, rgba(0, 178, 255, 0.03) 2%, rgba(0, 178, 255, 0.03) 3%, transparent 3%);
+            background-size: 80px 80px;
+            animation: grid-move 30s linear infinite;
+            z-index: -2;
+        }
+
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(80px, 80px); }
+        }
+
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 94, 0, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(0, 178, 255, 0.15) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 94, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 94, 0, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-family: 'Orbitron', monospace;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            border-color: #FF5E00;
+            box-shadow: 0 0 10px rgba(255, 94, 0, 0.5);
+        }
+
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            max-width: 800px;
+        }
+
+        .campus-map-section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .map-container {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 94, 0, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 40px rgba(255, 94, 0, 0.2);
+            margin-bottom: 80px;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .labs-section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .labs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .lab-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lab-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #FF5E00, #00B2FF);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .lab-card:hover {
+            border-color: #FF5E00;
+            box-shadow: 0 10px 40px rgba(255, 94, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .lab-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .lab-name {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FF5E00;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lab-icon {
+            font-size: 1.8rem;
+        }
+
+        .lab-details {
+            margin-top: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .detail-label {
+            color: #00B2FF;
+            font-weight: 600;
+            min-width: 80px;
+        }
+
+        .detail-value {
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .area-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, rgba(255, 94, 0, 0.2), rgba(0, 178, 255, 0.2));
+            border: 1px solid #FF5E00;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 94, 0, 0.2);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .copyright {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .labs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+  <script>
+    fetch("/navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("navbar-container").innerHTML = html;
+      });
+
+    function navigateTo(page) {
+      window.location.href = page + ".html";
+    }
+  </script>
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo-text">SIT CAMPUS LABS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#map">Campus Map</a></li>
+                <li><a href="#labs">Lab Directory</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Laboratory Directory</h1>
+        <p>Explore our state-of-the-art computing facilities across SIT Campus, Tumkur</p>
+    </section>
+
+    <section class="campus-map-section" id="map">
+        <h2 class="section-title">Campus Map</h2>
+        <div class="map-container">
+            <img
+                src="sit map.jpg"
+                alt="Illustrated map of SIT Campus in Tumkur showing the main entrance, central administrative block, computer science block, engineering department block, post graduate block, research and development wing, network engineering wing and nearby pathways with labeled routes to Aryabhata Computer Centre, Linux Laboratory, Rohini Computer Centre, Bhaskara Computer Centre, M Tech CSE Lab, M Tech CNE Lab, Project Lab and the Research Centre, presented in a clear and calm academic style"
+            >
+        </div>
+    </section>
+
+    <section class="labs-section" id="labs">
+        <h2 class="section-title">Laboratory Locations</h2>
+        
+        <div class="labs-grid">
+            <div class="lab-card">
+                <div class="lab-name">
+                    <span class="lab-icon">💻</span>
+                    Aryabhata Computer Centre
+                </div>
+                <div class="lab-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Location:</span>
+                        <span class="detail-value">Administrative Block Area</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Systems:</span>
+                        <span class="detail-value">24 Intel Core2Duo E7400 systems with 4GB RAM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Software:</span>
+                        <span class="detail-value">Windows, Ubuntu, Codeblocks, GCC, Java</span>
+                    </div>
+                    <span class="area-badge">148.83 m²</span>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <div class="lab-name">
+                    <span class="lab-icon">🐧</span>
+                    Linux Laboratory
+                </div>
+                <div class="lab-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Location:</span>
+                        <span class="detail-value">Computer Science Block</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Systems:</span>
+                        <span class="detail-value">50 Intel E7500 processors with 512MB RAM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Software:</span>
+                        <span class="detail-value">Windows, Ubuntu, Codeblocks, GCC, Java, Oracle, NS2</span>
+                    </div>
+                    <span class="area-badge">183.40 m²</span>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <div class="lab-name">
+                    <span class="lab-icon">⚡</span>
+                    Rohini Computer Centre
+                </div>
+                <div class="lab-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Location:</span>
+                        <span class="detail-value">Central Computing Block</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Systems:</span>
+                        <span class="detail-value">42 Core i5 2400 E7500 systems with 4GB RAM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Software:</span>
+                        <span class="detail-value">Windows, Ubuntu, Codeblocks, GCC, Java</span>
+                    </div>
+                    <span class="area-badge">107.16 m²</span>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <div class="lab-name">
+                    <span class="lab-icon">🔬</span>
+                    Bhaskara Computer Centre
+                </div>
+                <div class="lab-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Location:</span>
+                        <span class="detail-value">Engineering Department Block</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Systems:</span>
+                        <span class="detail-value">42 Core i5 2400 E7500 systems with 512MB RAM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Software:</span>
+                        <span class="detail-value">Windows, Ubuntu, Codeblocks, GCC, Java, Oracle, NS2</span>
+                    </div>
+                    <span class="area-badge">223.08 m²</span>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <div class="lab-name">
+                    <span class="lab-icon">🎓</span>
+                    M.Tech CSE Lab
+                </div>
+                <div class="lab-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Location:</span>
+                        <span class="detail-value">Post Graduate Block</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Systems:</span>
+                        <span class="detail-value">19 Core i5/i3 systems with 4GB & 2GB RAM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Software:</span>
+                        <span class="detail-value">Windows, Ubuntu, Codeblocks, GCC, Java, Oracle</span>
+                    </div>
+                    <span class="area-badge">223.08 m²</span>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <div class="lab-name">
+                    <span class="lab-icon">🌐</span>
+                    M.Tech CNE Lab
+                </div>
+                <div class="lab-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Location:</span>
+                        <span class="detail-value">Network Engineering Wing</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Systems:</span>
+                        <span class="detail-value">20 Core i3 systems with 2GB RAM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Software:</span>
+                        <span class="detail-value">Windows, Ubuntu, Codeblocks, GCC, Java, Oracle</span>
+                    </div>
+                    <span class="area-badge">25.00 m²</span>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <div class="lab-name">
+                    <span class="lab-icon">🚀</span>
+                    Project Lab
+                </div>
+                <div class="lab-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Location:</span>
+                        <span class="detail-value">Innovation & Research Block</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Equipment:</span>
+                        <span class="detail-value">15 Desktop PCs, 5KVA UPS (1), Air Conditioners (2)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Purpose:</span>
+                        <span class="detail-value">Final year project development and research</span>
+                    </div>
+                    <span class="area-badge">25.00 m²</span>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <div class="lab-name">
+                    <span class="lab-icon">🔍</span>
+                    Research Centre
+                </div>
+                <div class="lab-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Location:</span>
+                        <span class="detail-value">Research & Development Wing</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Systems:</span>
+                        <span class="detail-value">Core i5/i3 systems with 4GB RAM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Server:</span>
+                        <span class="detail-value">IBM X3100 M5 with Intel Xeon E3 1220V2 CPU, 16GB Memory, 1TB SATA</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Software:</span>
+                        <span class="detail-value">Windows, Ubuntu, Codeblocks, GCC, Java, Oracle, NS2</span>
+                    </div>
+                    <span class="area-badge">25.00 m²</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="copyright">© 2025 SIT Campus, Tumkur. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation to cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.lab-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

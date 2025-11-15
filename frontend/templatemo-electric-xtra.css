@@ -1,0 +1,256 @@
+/* Full Electric Xtra CSS theme placed here. You can edit freely. */
+
+/* START OF THEME */
+
+/*
+TemplateMo 596 Electric Xtra
+https://templatemo.com/tm-596-electric-xtra
+*/
+
+@charset "utf-8";
+
+/* CSS Document */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+    font-weight: 400;
+}
+
+/* ———————————————— BACKGROUND ELEMENTS ———————————————— */
+.grid-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 25% 25%, transparent 2%, rgba(255, 94, 0, 0.03) 2%, rgba(255, 94, 0, 0.03) 3%, transparent 3%),
+        radial-gradient(circle at 75% 75%, transparent 2%, rgba(0, 178, 255, 0.03) 2%, rgba(0, 178, 255, 0.03) 3%, transparent 3%);
+    background-size: 80px 80px;
+    animation: grid-move 30s linear infinite;
+    z-index: -2;
+}
+
+.gradient-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 94, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0, 178, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    z-index: -1;
+    animation: gradient-shift 10s ease-in-out infinite;
+}
+
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(transparent 50%, rgba(255, 94, 0, 0.01) 50%);
+    background-size: 100% 4px;
+    animation: scanlines 8s linear infinite;
+    z-index: 2;
+}
+
+.shapes-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.1;
+}
+
+.shape-circle {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #FF5E00;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    animation: float-rotate 20s ease-in-out infinite;
+}
+
+.shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 173px solid rgba(0, 178, 255, 0.2);
+    top: 60%;
+    right: 15%;
+    animation: float-rotate 25s ease-in-out infinite reverse;
+}
+
+.shape-square {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #00B2FF;
+    transform: rotate(45deg);
+    bottom: 20%;
+    left: 20%;
+    animation: float-rotate 22s ease-in-out infinite;
+}
+
+/* ———————————————— ANIMATIONS ———————————————— */
+@keyframes float-rotate {
+    0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+    25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
+    50% { transform: translateY(20px) rotate(180deg) scale(0.9); }
+    75% { transform: translateY(-10px) rotate(270deg) scale(1.05); }
+}
+@keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(80px, 80px); }
+}
+@keyframes gradient-shift {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+}
+@keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+/* ———————————————— FORM STYLING ———————————————— */
+.contact-form {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 94, 0, 0.2);
+    border-radius: 10px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #FF5E00;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 94, 0, 0.3);
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #FF5E00;
+    box-shadow: 0 0 20px rgba(255, 94, 0, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #FF5E00, #00B2FF);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', monospace;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 94, 0, 0.5);
+}
+
+/* ———————————————— BUTTONS ———————————————— */
+.cta-button {
+    padding: 12px 30px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+}
+
+.cta-secondary {
+    background: transparent;
+    color: #FF5E00;
+    border: 2px solid #FF5E00;
+    box-shadow: inset 0 0 20px rgba(255, 94, 0, 0.1);
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 94, 0, 0.1);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(255, 94, 0, 0.4), inset 0 0 30px rgba(255, 94, 0, 0.2);
+    border-color: #ffffff;
+}
+
+/* END OF THEME */
+/* FIXED LOADER OVERLAY */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+/* Prevent theme animations from shifting loader */
+.loader-overlay * {
+  transform: none !important;
+}
+
+/* POPUP SLIDE FROM TOP */
+@keyframes slideDownFixed {
+  0% {
+    transform: translate(-50%, -60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0px);
+    opacity: 1;
+  }
+}

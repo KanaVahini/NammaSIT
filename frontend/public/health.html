@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT Health Centre - Student Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/navbar.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, transparent 2%, rgba(0, 178, 100, 0.03) 2%, rgba(0, 178, 100, 0.03) 3%, transparent 3%),
+                radial-gradient(circle at 75% 75%, transparent 2%, rgba(0, 178, 255, 0.03) 2%, rgba(0, 178, 255, 0.03) 3%, transparent 3%);
+            background-size: 80px 80px;
+            animation: grid-move 30s linear infinite;
+            z-index: -2;
+        }
+
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(80px, 80px); }
+        }
+
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 178, 100, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(0, 178, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            z-index: -1;
+            animation: gradient-shift 10s ease-in-out infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: linear-gradient(transparent 50%, rgba(0, 178, 100, 0.01) 50%);
+            background-size: 100% 4px;
+            animation: scanlines 8s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+
+        #particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .particle::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00B264;
+            box-shadow: 0 0 10px #00B264, 0 0 20px #00B264;
+            animation: float-up 15s linear infinite;
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0, 178, 100, 0.1);
+        }
+
+        nav.scrolled {
+            padding: 15px 50px;
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 5px 30px rgba(0, 178, 100, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #00B264, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.5); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            font-family: 'Orbitron', monospace;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .nav-links a.active {
+            opacity: 1;
+            color: #00B264;
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            border-color: #00B264;
+            box-shadow: inset 0 0 10px rgba(0, 178, 100, 0.5);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00B264, #00B2FF);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 178, 100, 0.8);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: #00B264;
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 80px 20px 20px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1200px;
+            z-index: 10;
+        }
+
+        .hero-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: pulse-icon 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-icon {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .glitch-text {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 20px rgba(0, 178, 100, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.7;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #00B264;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .stat-label {
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        .cta-container {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00B264, #00B2FF);
+            color: white;
+            box-shadow: 0 0 30px rgba(0, 178, 100, 0.5);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 178, 100, 0.6);
+        }
+
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(45deg, #00B264, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .facility-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 178, 100, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .facility-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 178, 100, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .facility-card:hover::before {
+            left: 100%;
+        }
+
+        .facility-card:hover {
+            border-color: #00B264;
+            box-shadow: 0 10px 40px rgba(0, 178, 100, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .facility-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .facility-card h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #00B264;
+        }
+
+        .facility-card p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 178, 100, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: #00B264;
+            box-shadow: 0 10px 40px rgba(0, 178, 100, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .team-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #00B264, #00B2FF);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .team-card h3 {
+            font-family: 'Orbitron', monospace;
+            color: #00B264;
+            margin-bottom: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #00B264, transparent);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 178, 100, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            width: 45%;
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 55%;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #00B264, #00B2FF);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 0 20px rgba(0, 178, 100, 0.5);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 178, 100, 0.2);
+            border-radius: 10px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #00B264, #00B2FF);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .info-details h4 {
+            color: #00B264;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .info-details p {
+            opacity: 0.8;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(0, 178, 100, 0.2);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .copyright {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(10, 10, 10, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: start;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .glitch-text {
+                font-size: clamp(1.5rem, 8vw, 2.5rem);
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                margin-right: 0 !important;
+            }
+
+            .timeline-icon {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+  <script>
+    fetch("/navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("navbar-container").innerHTML = html;
+      });
+
+    function navigateTo(page) {
+      window.location.href = page + ".html";
+    }
+  </script>
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+    <div id="particles"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <span class="logo-text">🏥 SIT HEALTH CENTRE</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="#staff" class="nav-link">Staff</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-icon">🏥</div>
+            <h1 class="glitch-text">SIT Health Centre</h1>
+            <p class="subtitle">Your Campus Wellness Hub Since 1992</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Years of Service</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Qualified Doctors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Emergency Support</div>
+                </div>
+            </div>
+            <div class="cta-container">
+                <a href="#facilities" class="cta-button">Explore Facilities</a>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="facilities">
+        <h2 class="section-title">Our Facilities</h2>
+        <div class="facilities-grid">
+            <div class="facility-card">
+                <span class="facility-icon">🩺</span>
+                <h3>Consultation Room 1</h3>
+                <p>Fully equipped primary consultation room with modern medical equipment for comprehensive health assessments and medical consultations.</p>
+            </div>
+            <div class="facility-card">
+                <span class="facility-icon">💊</span>
+                <h3>Consultation Room 2</h3>
+                <p>Secondary consultation space ensuring privacy and comfort for students and staff during medical examinations and follow-ups.</p>
+            </div>
+            <div class="facility-card">
+                <span class="facility-icon">🏥</span>
+                <h3>Dressing Room</h3>
+                <p>Dedicated space for wound care, bandaging, and minor medical procedures with sterile equipment and supplies.</p>
+            </div>
+            <div class="facility-card">
+                <span class="facility-icon">🚨</span>
+                <h3>Emergency Room</h3>
+                <p>Rapid response emergency care facility equipped to handle urgent medical situations and provide immediate first aid.</p>
+            </div>
+            <div class="facility-card">
+                <span class="facility-icon">🛏️</span>
+                <h3>Day-Care Room</h3>
+                <p>Comfortable recovery space for students requiring observation, rest, or monitoring after minor procedures or illness.</p>
+            </div>
+            <div class="facility-card">
+                <span class="facility-icon">⚡</span>
+                <h3>First-Aid Services</h3>
+                <p>Immediate first-aid support available for all campus emergencies, injuries, and health concerns throughout the day.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="staff">
+        <h2 class="section-title">Our Medical Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-icon">👨‍⚕️</div>
+                <h3>Doctor 1</h3>
+                <p>Qualified Medical Professional</p>
+                <p style="opacity: 0.6; margin-top: 10px;">Providing expert medical consultation and care for students and staff.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">👨‍⚕️</div>
+                <h3>Doctor 2</h3>
+                <p>Qualified Medical Professional</p>
+                <p style="opacity: 0.6; margin-top: 10px;">Ensuring comprehensive healthcare coverage throughout the day.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">👩‍⚕️</div>
+                <h3>Staff Nurse</h3>
+                <p>Registered Nursing Professional</p>
+                <p style="opacity: 0.6; margin-top: 10px;">Delivering compassionate nursing care and medical support.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">🤝</div>
+                <h3>Support Staff</h3>
+                <p>Dedicated Support Team</p>
+                <p style="opacity: 0.6; margin-top: 10px;">Assisting both male and female students with care and dignity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">🩺</div>
+                <div class="timeline-content">
+                    <h3 style="color: #00B264; font-family: 'Orbitron', monospace; margin-bottom: 15px;">Medical Consultation</h3>
+                    <p style="opacity: 0.8;">On-campus medical consultation services for students and staff. Get professional health advice without leaving campus.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">🚑</div>
+                <div class="timeline-content">
+                    <h3 style="color: #00B264; font-family: 'Orbitron', monospace; margin-bottom: 15px;">Emergency Care</h3>
+                    <p style="opacity: 0.8;">Immediate response to medical emergencies with trained professionals ready to provide urgent care and stabilization.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">🩹</div>
+                <div class="timeline-content">
+                    <h3 style="color: #00B264; font-family: 'Orbitron', monospace; margin-bottom: 15px;">First-Aid Treatment</h3>
+                    <p style="opacity: 0.8;">Comprehensive first-aid services for injuries, minor accidents, and health issues occurring on campus.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">📋</div>
+                <div class="timeline-content">
+                    <h3 style="color: #00B264; font-family: 'Orbitron', monospace; margin-bottom: 15px;">Health Check-ups</h3>
+                    <p style="opacity: 0.8;">Regular health screenings and check-ups to monitor student wellness and prevent health issues.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">💊</div>
+                <div class="timeline-content">
+                    <h3 style="color: #00B264; font-family: 'Orbitron', monospace; margin-bottom: 15px;">Minor Procedures</h3>
+                    <p style="opacity: 0.8;">Day-care facility available for minor medical procedures with proper monitoring and care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2 class="section-title">Visit Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 style="font-family: 'Orbitron', monospace; font-size: 2rem; margin-bottom: 30px; color: #00B264;">Health Centre Location</h3>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-details">
+                        <h4>Address</h4>
+                        <p>SIT Campus, Tumkur</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🕐</div>
+                    <div class="info-details">
+                        <h4>Operating Since</h4>
+                        <p>5th October 1992</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-details">
+                        <h4>Availability</h4>
+                        <p>During Campus Hours</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🌐</div>
+                    <div class="info-details">
+                        <h4>Website</h4>
+                        <p>sit.ac.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <h3 style="font-family: 'Orbitron', monospace; font-size: 2rem; margin-bottom: 30px; color: #00B264;">Why Choose Us</h3>
+                <p style="opacity: 0.8; line-height: 1.8; margin-bottom: 20px;">
+                    Our Health Centre has been serving the SIT community since 1992. With over 30 years of dedication to student wellness, we provide:
+                </p>
+                <ul style="list-style: none; opacity: 0.8;">
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #00B264;">✓</span>
+                        Private consultation and treatment rooms
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #00B264;">✓</span>
+                        Day-care facility for monitoring and recovery
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #00B264;">✓</span>
+                        Dedicated support staff for all students
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">© 2025 SIT Health Centre. Caring for student wellness since 1992. | <a href="https://sit.ac.in" target="_blank" style="color: #00B264; text-decoration: none;">sit.ac.in</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-link');
+
+        function updateActiveNav() {
+            const scrollPosition = window.pageYOffset + 100;
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navItems.forEach(item => item.classList.remove('active'));
+                    const currentNav = document.querySelector(`.nav-link[href="#${section.id}"]`);
+                    if (currentNav) currentNav.classList.add('active');
+                }
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            updateActiveNav();
+        });
+
+        // Initial active nav update
+        updateActiveNav();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize particles
+        createParticles();
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe facility cards
+        document.querySelectorAll('.facility-card, .team-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html><span style="position: absolute; left: 0; color: #00B264;">✓</span>
+                        Qualified medical professionals on-site
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #00B264;">✓</span>
+                        Comprehensive emergency care facilities
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">

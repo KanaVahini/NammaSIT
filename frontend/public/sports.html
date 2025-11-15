@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT Sports - Where Energy Meets Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/navbar.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, transparent 2%, rgba(255, 94, 0, 0.03) 2%, rgba(255, 94, 0, 0.03) 3%, transparent 3%),
+                radial-gradient(circle at 75% 75%, transparent 2%, rgba(0, 178, 255, 0.03) 2%, rgba(0, 178, 255, 0.03) 3%, transparent 3%);
+            background-size: 80px 80px;
+            animation: grid-move 30s linear infinite;
+            z-index: -2;
+        }
+
+        .shapes-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+        }
+
+        .shape-circle {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #FF5E00;
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            animation: float-rotate 20s ease-in-out infinite;
+        }
+
+        .shape-triangle {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 173px solid rgba(0, 178, 255, 0.2);
+            top: 60%;
+            right: 15%;
+            animation: float-rotate 25s ease-in-out infinite reverse;
+        }
+
+        .shape-square {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #00B2FF;
+            transform: rotate(45deg);
+            bottom: 20%;
+            left: 20%;
+            animation: float-rotate 22s ease-in-out infinite;
+        }
+
+        @keyframes float-rotate {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translateY(-30px) rotate(90deg) scale(1.1);
+            }
+            50% {
+                transform: translateY(20px) rotate(180deg) scale(0.9);
+            }
+            75% {
+                transform: translateY(-10px) rotate(270deg) scale(1.05);
+            }
+        }
+
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 94, 0, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(0, 178, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            z-index: -1;
+            animation: gradient-shift 10s ease-in-out infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(80px, 80px); }
+        }
+
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .particle::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #FF5E00;
+            box-shadow: 0 0 10px #FF5E00, 0 0 20px #FF5E00;
+            animation: float-up 15s linear infinite;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 94, 0, 0.1);
+        }
+
+        nav.scrolled {
+            padding: 15px 50px;
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 5px 30px rgba(255, 94, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                filter: brightness(1);
+            }
+            50% { 
+                filter: brightness(1.5);
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            font-family: 'Orbitron', monospace;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .nav-links a.active {
+            opacity: 1;
+            color: #FF5E00;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            border-color: #FF5E00;
+            box-shadow: inset 0 0 10px rgba(255, 94, 0, 0.5);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #FF5E00, #00B2FF);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 94, 0, 0.8);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: #FF5E00;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 80px 20px 20px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1200px;
+            animation: fade-in-up 1s ease-out;
+            z-index: 10;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-rotator {
+            position: relative;
+            min-height: 150px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .text-set {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            display: none;
+        }
+
+        .text-set.active {
+            opacity: 1;
+            display: block;
+        }
+
+        .glitch-text {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 900;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 20px rgba(255, 94, 0, 0.5);
+        }
+
+        .char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: charFlyIn 0.5s ease-out forwards;
+        }
+
+        @keyframes charFlyIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            opacity: 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            font-weight: 300;
+        }
+
+        .subtitle.visible {
+            animation: subtitleFade 0.8s ease-out 0.5s forwards;
+        }
+
+        @keyframes subtitleFade {
+            to {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-container {
+            position: absolute;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            z-index: 100;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            color: white;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 30px rgba(255, 94, 0, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(255, 94, 0, 0.5);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 40px rgba(255, 94, 0, 0.8);
+            }
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: #FF5E00;
+            border: 2px solid #FF5E00;
+            box-shadow: inset 0 0 20px rgba(255, 94, 0, 0.1);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 94, 0, 0.1);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 94, 0, 0.4), inset 0 0 30px rgba(255, 94, 0, 0.2);
+            border-color: #ffffff;
+        }
+
+        .features {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .sport-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .sport-card:hover {
+            transform: translateY(-10px);
+            border-color: #FF5E00;
+            box-shadow: 0 10px 40px rgba(255, 94, 0, 0.4);
+        }
+
+        .sport-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .sport-card h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #FF5E00;
+        }
+
+        .sport-card p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .gym-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gym-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .gym-info h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gym-info p {
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .timing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 94, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .timing-card strong {
+            color: #FF5E00;
+            font-size: 1.2rem;
+        }
+
+        .achievements {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: scale(1.05);
+            border-color: #00B2FF;
+            box-shadow: 0 10px 40px rgba(0, 178, 255, 0.4);
+        }
+
+        .achievement-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .achievement-card h3 {
+            color: #00B2FF;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 94, 0, 0.2);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .copyright {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: linear-gradient(
+                transparent 50%,
+                rgba(255, 94, 0, 0.01) 50%
+            );
+            background-size: 100% 4px;
+            animation: scanlines 8s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(10, 10, 10, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: start;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .glitch-text {
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .gym-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sports-grid,
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+  <script>
+    fetch("/navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("navbar-container").innerHTML = html;
+      });
+
+    function navigateTo(page) {
+      window.location.href = page + ".html";
+    }
+  </script>
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+
+    <div class="shapes-container">
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-triangle"></div>
+        <div class="shape shape-square"></div>
+    </div>
+
+    <div id="particles"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <span class="logo-text">🏅 SIT SPORTS</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="#gym" class="nav-link">Gym</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="text-rotator">
+                <div class="text-set active">
+                    <h1 class="glitch-text">ENERGY MEETS EXCELLENCE</h1>
+                    <p class="subtitle">Where champions are born and legends are made</p>
+                </div>
+                <div class="text-set">
+                    <h1 class="glitch-text">TRAIN HARD STAY SHARP</h1>
+                    <p class="subtitle">Building strength, character, and teamwork</p>
+                </div>
+                <div class="text-set">
+                    <h1 class="glitch-text">BEYOND THE GAME</h1>
+                    <p class="subtitle">Creating unforgettable college memories</p>
+                </div>
+            </div>
+        </div>
+        <div class="cta-container">
+            <a href="#facilities" class="cta-button cta-primary">Explore Facilities</a>
+            <a href="#gym" class="cta-button cta-secondary">Join the Gym</a>
+        </div>
+    </section>
+
+    <section class="features" id="facilities">
+        <h2 class="section-title">Sports Facilities</h2>
+        <p style="text-align: center; opacity: 0.8; font-size: 1.2rem; max-width: 800px; margin: 0 auto 50px;">
+            SIT provides a mix of indoor and outdoor sports facilities so every student can find their game. From packed stadiums to indoor arenas, we've got it all.
+        </p>
+
+        <h3 style="font-family: 'Orbitron', monospace; font-size: 2rem; text-align: center; color: #FF5E00; margin: 60px 0 30px;">🏟 Outdoor Sports</h3>
+        <div class="sports-grid">
+            <div class="sport-card">
+                <span class="sport-icon">⚽</span>
+                <h3>Football</h3>
+                <p>Full-size field for competitive matches and practice sessions. Home to intense inter-department battles.</p>
+            </div>
+            <div class="sport-card">
+                <span class="sport-icon">🏏</span>
+                <h3>Cricket</h3>
+                <p>Professional cricket ground for T20 tournaments and practice. Our teams are semi-finalists in championships.</p>
+            </div>
+            <div class="sport-card">
+                <span class="sport-icon">🏐</span>
+                <h3>Volleyball</h3>
+                <p>Multiple courts for volleyball enthusiasts. Perfect for team building and competitive play.</p>
+            </div>
+            <div class="sport-card">
+                <span class="sport-icon">🏀</span>
+                <h3>Basketball</h3>
+                <p>State-of-the-art basketball courts. Home to WBUT team players and department championships.</p>
+            </div>
+            <div class="sport-card">
+                <span class="sport-icon">🏃</span>
+                <h3>Athletics</h3>
+                <p>Track and field facilities for sprints, marathons, and competitive athletics events.</p>
+            </div>
+            <div class="sport-card">
+                <span class="sport-icon">🤸</span>
+                <h3>Long Jump</h3>
+                <p>Professional long jump pit for athletes to train and compete in annual sports meets.</p>
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Orbitron', monospace; font-size: 2rem; text-align: center; color: #00B2FF; margin: 80px 0 30px;">🎮 Indoor Sports</h3>
+        <div class="sports-grid">
+            <div class="sport-card">
+                <span class="sport-icon">🏓</span>
+                <h3>Table Tennis</h3>
+                <p>State-level champions train here. Multiple tables for practice and tournaments.</p>
+            </div>
+            <div class="sport-card">
+                <span class="sport-icon">♟️</span>
+                <h3>Chess</h3>
+                <p>Quiet spaces for strategic minds. Develop your tactical thinking and compete in tournaments.</p>
+            </div>
+            <div class="sport-card">
+                <span class="sport-icon">🎯</span>
+                <h3>Carrom</h3>
+                <p>Traditional indoor game for recreation and friendly competitions among students.</p>
+            </div>
+            <div class="sport-card">
+                <span class="sport-icon">🏸</span>
+                <h3>Badminton</h3>
+                <p>Indoor badminton courts for year-round play, practice, and competitive matches.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gym-section" id="gym">
+        <h2 class="section-title">Campus Gym</h2>
+        <div class="gym-content">
+            <div class="gym-info">
+                <h2>💪 Train Hard, Stay Sharp</h2>
+                <p>Fitness isn't optional — it's a lifestyle. Our well-equipped campus gym is open for all students who want to stay in shape, build strength, or simply start their day with a boost of energy.</p>
+                <p>Whether you're lifting weights, doing cardio, or just starting your fitness journey, the SIT gym helps you stay consistent and committed.</p>
+                
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #FF5E00; font-size: 1.5rem; margin-bottom: 20px;">⏰ Gym Timings</h3>
+                    <div class="timing-card">
+                        <strong>Morning:</strong> 5:30 AM – 7:15 AM
+                    </div>
+                    <div class="timing-card">
+                        <strong>Evening:</strong> 4:00 PM – 7:00 PM
+                    </div>
+                    <div class="timing-card">
+                        <strong>Sunday:</strong> Closed (Rest day 💆‍♂️)
+                    </div>
+                </div>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 94, 0, 0.2); border-radius: 10px; padding: 40px; backdrop-filter: blur(10px); text-align: center;">
+                <div style="font-size: 6rem; margin-bottom: 20px;">🏋️</div>
+                <h3 style="font-size: 1.8rem; color: #00B2FF; margin-bottom: 15px;">State-of-the-Art Equipment</h3>
+                <p style="opacity: 0.8; line-height: 1.8;">Weights • Cardio Machines • Benches • Dumbbells • Resistance Training • Free Weights</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements" id="achievements">
+        <h2 class="section-title">🏆 Our Achievements</h2>
+        <p style="text-align: center; opacity: 0.8; font-size: 1.2rem; max-width: 800px; margin: 0 auto 20px;">
+            SIT teams have made a mark in multiple tournaments. Winning is a habit here — and so is participation.
+        </p>
+        
+        <div class="achievement-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon">🏓</div>
+                <h3>State-Level Champions</h3>
+                <p>Table Tennis State Championship Winners</p>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">⚽</div>
+                <h3>Football Excellence</h3>
+                <p>Semi-Finalists & Multiple Tournament Winners</p>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🏀</div>
+                <h3>Basketball Stars</h3>
+                <p>Player Selected for WBUT Team</p>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🏏</div>
+                <h3>Cricket T20</h3>
+                <p>

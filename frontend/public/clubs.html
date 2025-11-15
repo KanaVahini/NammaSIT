@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT College Clubs - Discover Your Passion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/navbar.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, transparent 2%, rgba(255, 94, 0, 0.03) 2%, rgba(255, 94, 0, 0.03) 3%, transparent 3%),
+                radial-gradient(circle at 75% 75%, transparent 2%, rgba(0, 178, 255, 0.03) 2%, rgba(0, 178, 255, 0.03) 3%, transparent 3%);
+            background-size: 80px 80px;
+            animation: grid-move 30s linear infinite;
+            z-index: -2;
+        }
+
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(80px, 80px); }
+        }
+
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 94, 0, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(0, 178, 255, 0.15) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: linear-gradient(transparent 50%, rgba(255, 94, 0, 0.01) 50%);
+            background-size: 100% 4px;
+            animation: scanlines 8s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 94, 0, 0.1);
+            box-shadow: 0 5px 30px rgba(255, 94, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.7;
+            max-width: 600px;
+        }
+
+        .clubs-section {
+            padding: 60px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn {
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 94, 0, 0.3);
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 94, 0, 0.2);
+            border-color: #FF5E00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 94, 0, 0.3);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(45deg, #FF5E00, #00B2FF);
+            border-color: transparent;
+            box-shadow: 0 0 25px rgba(255, 94, 0, 0.5);
+        }
+
+        .clubs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .club-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .club-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 94, 0, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .club-card:hover::before {
+            left: 100%;
+        }
+
+        .club-card:hover {
+            transform: translateY(-10px);
+            border-color: #FF5E00;
+            box-shadow: 0 15px 40px rgba(255, 94, 0, 0.4);
+        }
+
+        .club-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .club-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, rgba(255, 94, 0, 0.2), rgba(0, 178, 255, 0.2));
+            border-radius: 12px;
+            border: 1px solid rgba(255, 94, 0, 0.3);
+        }
+
+        .club-name {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FF5E00;
+        }
+
+        .club-category {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(0, 178, 255, 0.2);
+            border: 1px solid rgba(0, 178, 255, 0.4);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .club-description {
+            line-height: 1.7;
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 94, 0, 0.2);
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .copyright {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .clubs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-container {
+                padding: 20px;
+            }
+
+            .filter-btn {
+                font-size: 0.8rem;
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+  <script>
+    fetch("/navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("navbar-container").innerHTML = html;
+      });
+
+    function navigateTo(page) {
+      window.location.href = page + ".html";
+    }
+  </script>
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo-text">SIT CLUBS PORTAL</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Discover Your Passion</h1>
+        <p>Explore the diverse range of clubs at SIT and find where you belong</p>
+    </section>
+
+    <section class="clubs-section">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Clubs</button>
+            <button class="filter-btn" data-filter="theatre">🎭 Theatre</button>
+            <button class="filter-btn" data-filter="event">🎤 Events</button>
+            <button class="filter-btn" data-filter="coding">💻 Coding</button>
+            <button class="filter-btn" data-filter="writing">✍️ Writing</button>
+            <button class="filter-btn" data-filter="debate">🗣 Debate</button>
+            <button class="filter-btn" data-filter="music">🎵 Music</button>
+            <button class="filter-btn" data-filter="dance">💃 Dance</button>
+            <button class="filter-btn" data-filter="media">📸 Media</button>
+            <button class="filter-btn" data-filter="ai">🤖 AI/ML</button>
+            <button class="filter-btn" data-filter="aero">✈️ Aeronautics</button>
+            <button class="filter-btn" data-filter="robotics">⚙️ Robotics</button>
+            <button class="filter-btn" data-filter="auto">🚗 Automobiles</button>
+            <button class="filter-btn" data-filter="quiz">🧠 Quizzing</button>
+        </div>
+
+        <div class="clubs-grid" id="clubsGrid">
+            <!-- Clubs will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <footer>
+        <p class="copyright">© 2025 SIT College Clubs Portal. Building tomorrow's leaders, today.</p>
+    </footer>
+
+    <script>
+        const clubsData = [
+            // Theatre & Communication
+            { name: "Aurora", category: "theatre", icon: "🌅", description: "Theatre club focusing on stage performance, mime, and street plays. Help students improve communication, expression, confidence, and content creation skills." },
+            { name: "BlackPearl", category: "theatre", icon: "🏴‍☠️", description: "Theatre club specializing in stage performance and creative storytelling. Get opportunities to perform in major fests." },
+            { name: "Drishya", category: "theatre", icon: "👁️", description: "Theatre club dedicated to mime, street plays, and performance arts. Showcase your creative storytelling talents." },
+
+            // Event & Communication
+            { name: "TEDx", category: "event", icon: "🎯", description: "Organize inspiring TEDx events. Develop leadership, communication, teamwork, and professional organizing skills." },
+            { name: "Pathfinder", category: "event", icon: "🧭", description: "Event management club specializing in planning and executing college festivals end-to-end." },
+            { name: "Avalanche", category: "event", icon: "⛰️", description: "Major event organizing club playing a vital role in executing the biggest festivals on campus." },
+
+            // Coding & Tech
+            { name: "Decoders", category: "coding", icon: "🔓", description: "Premier coding club conducting Code Games, Code It Out, and Code Eve. Where top brains of SIT are found. Participate in hackathons and competitive programming." },
+            { name: "Sark", category: "coding", icon: "🦈", description: "Coding and software development club focused on problem-solving and real-world projects." },
+            { name: "GeeksforGeeks", category: "coding", icon: "🟢", description: "Dedicated to competitive programming, coding competitions, and tech meetups." },
+            { name: "Research Gate", category: "coding", icon: "🔬", description: "Research-focused tech club exploring advanced software development and innovation." },
+            { name: "Quest", category: "coding", icon: "🗺️", description: "Coding club strengthening logical thinking through competitions and practical projects." },
+            { name: "Sigma", category: "coding", icon: "Σ", description: "Tech club focusing on hackathons and cutting-edge software development." },
+            { name: "IEEE SB SIT", category: "coding", icon: "⚡", description: "IEEE Student Branch conducting technical workshops, competitions, and innovation challenges." },
+
+            // Creative Writing
+            { name: "Script Ink", category: "writing", icon: "🖋️", description: "Writers and storytellers express creativity through poems, scripts, and short stories. Collaborate on campus magazines and writing events." },
+
+            // Debate & Oratory
+            { name: "Debsoc", category: "debate", icon: "⚖️", description: "Debating club sharpening communication, argumentation, and critical-thinking skills. Represent college in inter-college competitions." },
+
+            // Music & Vocals
+            { name: "Destiny", category: "music", icon: "🎸", description: "Club for singers and musicians nurturing vocal skills and collaborative music creation. Perform at cultural fests and competitions." },
+
+            // Dance
+            { name: "Panthers", category: "dance", icon: "🐆", description: "Dance club performing various styles. Encourage creativity, rhythm, teamwork, and stage presence in major dance battles." },
+            { name: "Vulcans", category: "dance", icon: "🔥", description: "Dynamic dance club representing SIT in cultural events and competitions." },
+
+            // Media & Production
+            { name: "Adlib", category: "media", icon: "🎬", description: "Photography, videography, and filmmaking club. Learn visual storytelling, cinematography, and editing. Capture all major campus events." },
+
+            // AI & Data Science
+            { name: "AI Brewery", category: "ai", icon: "🧪", description: "AI, ML, DL, and data science community. Host workshops, coding contests, and hands-on sessions. Work on innovative AI projects." },
+
+            // Aeronautics
+            { name: "Soaring Eagles", category: "aero", icon: "🦅", description: "Explore aerodynamics, drones, and aviation engineering. Hands-on exposure to drone building and flight mechanics. Participate in drone racing." },
+
+            // Robotics & Hardware
+            { name: "Corsit", category: "robotics", icon: "🤖", description: "Robotics and hardware club teaching embedded systems and automation. Work on practical engineering projects and competitions." },
+
+            // Automobiles & Fabrication
+            { name: "Auto Architects", category: "auto", icon: "🏎️", description: "Automotive engineering and vehicle design club. Build racing prototypes and electric vehicles for BAJA and SUPRA competitions." },
+            { name: "Adrenaline Racing", category: "auto", icon: "🏁", description: "High-octane automobile club focused on fabrication and racing. Compete in national automobile competitions." },
+
+            // Quizzing & Logic
+            { name: "Quizzing Inc", category: "quiz", icon: "💡", description: "Enhance general knowledge, logical reasoning, and quick thinking. Participate in inter-college quiz leagues and national circuits." }
+        ];
+
+        const clubsGrid = document.getElementById('clubsGrid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        function renderClubs(filter = 'all') {
+            clubsGrid.innerHTML = '';
+            const filteredClubs = filter === 'all' ? clubsData : clubsData.filter(club => club.category === filter);
+            
+            filteredClubs.forEach(club => {
+                const clubCard = document.createElement('div');
+                clubCard.className = 'club-card';
+                clubCard.innerHTML = `
+                    <div class="club-header">
+                        <div class="club-icon">${club.icon}</div>
+                        <h3 class="club-name">${club.name}</h3>
+                    </div>
+                    <span class="club-category">${club.category}</span>
+                    <p class="club-description">${club.description}</p>
+                `;
+                clubsGrid.appendChild(clubCard);
+            });
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                renderClubs(filter);
+            });
+        });
+
+        // Initial render
+        renderClubs();
+    </script>
+</body>
+</html>

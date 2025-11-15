@@ -1,0 +1,3802 @@
+[
+  {
+    "student_id": 1,
+    "name": "Diya",
+    "department": "Biotech",
+    "interests": [
+      "IoT",
+      "Robotics",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Cooking"
+    ],
+    "skills": {
+      "HTML": 4,
+      "CSS": 2,
+      "Java": 4
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Publish research",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Coding",
+      "Teamwork"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Workshops"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 2,
+    "name": "Vikram",
+    "department": "EEE",
+    "interests": [
+      "Web Development",
+      "Game Development",
+      "Machine Learning"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Cooking"
+    ],
+    "skills": {
+      "CSS": 4,
+      "Creativity": 4,
+      "Leadership": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Start startup",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Coding",
+      "Teamwork"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 3,
+    "name": "Riya",
+    "department": "EEE",
+    "interests": [
+      "Machine Learning",
+      "Photography",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Dancing",
+      "Music"
+    ],
+    "skills": {
+      "Java": 3,
+      "Problem Solving": 1,
+      "SQL": 4
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Get placed",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Coding",
+      "Design"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 4,
+    "name": "Rohini",
+    "department": "Civil",
+    "interests": [
+      "Analytics",
+      "Entrepreneurship",
+      "Data Science"
+    ],
+    "hobbies": [
+      "Gaming",
+      "Reading"
+    ],
+    "skills": {
+      "React": 2,
+      "Python": 4,
+      "SQL": 1
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Get internship",
+      "Get placed"
+    ],
+    "good_at": [
+      "Coding",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Competitions"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 5,
+    "name": "Rekha",
+    "department": "CSE",
+    "interests": [
+      "Game Development",
+      "Data Science",
+      "Analytics"
+    ],
+    "hobbies": [
+      "Reading",
+      "Dancing"
+    ],
+    "skills": {
+      "Communication": 4,
+      "Problem Solving": 3,
+      "HTML": 5
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Build portfolio",
+      "Publish research"
+    ],
+    "good_at": [
+      "Leadership",
+      "Coding"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 6,
+    "name": "Yash",
+    "department": "Biotech",
+    "interests": [
+      "IoT",
+      "Data Science",
+      "Cybersecurity"
+    ],
+    "hobbies": [
+      "Dancing",
+      "Cooking"
+    ],
+    "skills": {
+      "Leadership": 5,
+      "Python": 1,
+      "Communication": 2
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Get placed",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Competitions"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 7,
+    "name": "Kavya",
+    "department": "Civil",
+    "interests": [
+      "Photography",
+      "Machine Learning",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Reading",
+      "Cooking"
+    ],
+    "skills": {
+      "JavaScript": 5,
+      "Public Speaking": 5,
+      "Problem Solving": 3
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Start startup",
+      "Get internship"
+    ],
+    "good_at": [
+      "Coding",
+      "Communication"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 8,
+    "name": "Dev",
+    "department": "EEE",
+    "interests": [
+      "IoT",
+      "Photography",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Photography",
+      "Travelling"
+    ],
+    "skills": {
+      "Creativity": 5,
+      "Leadership": 4,
+      "Problem Solving": 2
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Publish research",
+      "Get internship"
+    ],
+    "good_at": [
+      "Communication",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 9,
+    "name": "Diya",
+    "department": "ISE",
+    "interests": [
+      "Robotics",
+      "Photography",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Reading"
+    ],
+    "skills": {
+      "Python": 4,
+      "Communication": 4,
+      "Creativity": 3
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Publish research",
+      "Get internship"
+    ],
+    "good_at": [
+      "Design",
+      "Communication"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Competitions"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 10,
+    "name": "Pranav",
+    "department": "EEE",
+    "interests": [
+      "Design",
+      "IoT",
+      "Photography"
+    ],
+    "hobbies": [
+      "Photography",
+      "Music"
+    ],
+    "skills": {
+      "CSS": 1,
+      "React": 1,
+      "Public Speaking": 4
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Publish research",
+      "Start startup"
+    ],
+    "good_at": [
+      "Creativity",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 11,
+    "name": "Suhas",
+    "department": "ECE",
+    "interests": [
+      "Entrepreneurship",
+      "Design",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Photography",
+      "Gym"
+    ],
+    "skills": {
+      "Creativity": 5,
+      "Leadership": 2,
+      "Public Speaking": 3
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Get placed",
+      "Start startup"
+    ],
+    "good_at": [
+      "Creativity",
+      "Communication"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Meetups"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 12,
+    "name": "Karan",
+    "department": "EEE",
+    "interests": [
+      "Data Science",
+      "Cybersecurity",
+      "Robotics"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Movies"
+    ],
+    "skills": {
+      "Creativity": 1,
+      "CSS": 5,
+      "SQL": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Win hackathons",
+      "Get internship"
+    ],
+    "good_at": [
+      "Communication",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Workshops"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 13,
+    "name": "Manoj",
+    "department": "AIML",
+    "interests": [
+      "Photography",
+      "IoT",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Cooking",
+      "Sketching"
+    ],
+    "skills": {
+      "CSS": 5,
+      "SQL": 4,
+      "Creativity": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get placed",
+      "Start startup"
+    ],
+    "good_at": [
+      "Communication",
+      "Coding"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Meetups"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 14,
+    "name": "Dev",
+    "department": "Biotech",
+    "interests": [
+      "Photography",
+      "Analytics",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Reading",
+      "Sketching"
+    ],
+    "skills": {
+      "Public Speaking": 4,
+      "React": 5,
+      "CSS": 1
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Improve skills",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Design",
+      "Communication"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 15,
+    "name": "Neha",
+    "department": "Civil",
+    "interests": [
+      "UI/UX",
+      "Design",
+      "Music"
+    ],
+    "hobbies": [
+      "Movies",
+      "Cooking"
+    ],
+    "skills": {
+      "Problem Solving": 5,
+      "Creativity": 5,
+      "CSS": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Win hackathons",
+      "Get placed"
+    ],
+    "good_at": [
+      "Communication",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 16,
+    "name": "Rohit",
+    "department": "EEE",
+    "interests": [
+      "Game Development",
+      "Data Science",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Sketching",
+      "Music"
+    ],
+    "skills": {
+      "JavaScript": 5,
+      "HTML": 3,
+      "C++": 2
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Start startup",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Coding",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Workshops"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 17,
+    "name": "Rekha",
+    "department": "ISE",
+    "interests": [
+      "Machine Learning",
+      "IoT",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Movies",
+      "Gym"
+    ],
+    "skills": {
+      "CSS": 3,
+      "Communication": 4,
+      "React": 1
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Get placed",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 18,
+    "name": "Rahul",
+    "department": "Biotech",
+    "interests": [
+      "Marketing",
+      "Analytics",
+      "Machine Learning"
+    ],
+    "hobbies": [
+      "Music",
+      "Gaming"
+    ],
+    "skills": {
+      "Problem Solving": 4,
+      "Python": 3,
+      "HTML": 2
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Build portfolio",
+      "Publish research"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 19,
+    "name": "Rohit",
+    "department": "Mechanical",
+    "interests": [
+      "Music",
+      "AI",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Movies",
+      "DIY Projects"
+    ],
+    "skills": {
+      "Java": 5,
+      "CSS": 2,
+      "Communication": 2
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Publish research",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 20,
+    "name": "Harsh",
+    "department": "ISE",
+    "interests": [
+      "Game Development",
+      "Web Development",
+      "Data Science"
+    ],
+    "hobbies": [
+      "Movies",
+      "Gym"
+    ],
+    "skills": {
+      "CSS": 5,
+      "SQL": 4,
+      "Public Speaking": 1
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Start startup",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Leadership",
+      "Coding"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 21,
+    "name": "Rahul",
+    "department": "Biotech",
+    "interests": [
+      "Analytics",
+      "Entrepreneurship",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Photography",
+      "Writing"
+    ],
+    "skills": {
+      "Communication": 2,
+      "SQL": 3,
+      "Java": 4
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Win hackathons",
+      "Start startup"
+    ],
+    "good_at": [
+      "Creativity",
+      "Teamwork"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Meetups"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 22,
+    "name": "Anjali",
+    "department": "ISE",
+    "interests": [
+      "Robotics",
+      "Web Development",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Reading",
+      "Gaming"
+    ],
+    "skills": {
+      "SQL": 2,
+      "JavaScript": 4,
+      "Creativity": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get placed",
+      "Publish research"
+    ],
+    "good_at": [
+      "Leadership",
+      "Coding"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Hackathons"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 23,
+    "name": "Yash",
+    "department": "AIDS",
+    "interests": [
+      "Data Science",
+      "Game Development",
+      "Web Development"
+    ],
+    "hobbies": [
+      "Gaming",
+      "Reading"
+    ],
+    "skills": {
+      "SQL": 2,
+      "Public Speaking": 1,
+      "Python": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get placed",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Workshops"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 24,
+    "name": "Suhas",
+    "department": "ECE",
+    "interests": [
+      "Machine Learning",
+      "AI",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Photography",
+      "Sketching"
+    ],
+    "skills": {
+      "Java": 2,
+      "CSS": 5,
+      "Problem Solving": 1
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Build portfolio",
+      "Get internship"
+    ],
+    "good_at": [
+      "Creativity",
+      "Communication"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Workshops"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 25,
+    "name": "Sanjana",
+    "department": "EEE",
+    "interests": [
+      "Game Development",
+      "Marketing",
+      "Machine Learning"
+    ],
+    "hobbies": [
+      "Photography",
+      "Reading"
+    ],
+    "skills": {
+      "Public Speaking": 4,
+      "JavaScript": 1,
+      "Python": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get placed",
+      "Publish research"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Coding"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 26,
+    "name": "Yash",
+    "department": "EEE",
+    "interests": [
+      "UI/UX",
+      "AI",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Music",
+      "Movies"
+    ],
+    "skills": {
+      "React": 4,
+      "JavaScript": 1,
+      "SQL": 3
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Improve skills",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Communication",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 27,
+    "name": "Anjali",
+    "department": "Civil",
+    "interests": [
+      "Photography",
+      "Web Development",
+      "Cybersecurity"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Gaming"
+    ],
+    "skills": {
+      "Java": 3,
+      "SQL": 4,
+      "CSS": 3
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Publish research",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Leadership",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 28,
+    "name": "Rohit",
+    "department": "Civil",
+    "interests": [
+      "Marketing",
+      "IoT",
+      "Data Science"
+    ],
+    "hobbies": [
+      "Dancing",
+      "Music"
+    ],
+    "skills": {
+      "SQL": 2,
+      "Creativity": 4,
+      "Leadership": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get placed",
+      "Get internship"
+    ],
+    "good_at": [
+      "Communication",
+      "Coding"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 29,
+    "name": "Yash",
+    "department": "Civil",
+    "interests": [
+      "AI",
+      "UI/UX",
+      "IoT"
+    ],
+    "hobbies": [
+      "Cooking",
+      "Reading"
+    ],
+    "skills": {
+      "Python": 3,
+      "Problem Solving": 5,
+      "Public Speaking": 2
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Get internship",
+      "Start startup"
+    ],
+    "good_at": [
+      "Coding",
+      "Teamwork"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 30,
+    "name": "Rohini",
+    "department": "Mechanical",
+    "interests": [
+      "Design",
+      "Marketing",
+      "Robotics"
+    ],
+    "hobbies": [
+      "Reading",
+      "Music"
+    ],
+    "skills": {
+      "CSS": 5,
+      "JavaScript": 2,
+      "Creativity": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Build portfolio",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Communication",
+      "Design"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Cultural Events",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 31,
+    "name": "Tanvi",
+    "department": "Mechanical",
+    "interests": [
+      "Web Development",
+      "Marketing",
+      "Design"
+    ],
+    "hobbies": [
+      "Dancing",
+      "DIY Projects"
+    ],
+    "skills": {
+      "Java": 2,
+      "Leadership": 3,
+      "React": 1
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Get placed",
+      "Publish research"
+    ],
+    "good_at": [
+      "Leadership",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 32,
+    "name": "Ajay",
+    "department": "Biotech",
+    "interests": [
+      "Robotics",
+      "Cybersecurity",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Sketching",
+      "Gym"
+    ],
+    "skills": {
+      "HTML": 3,
+      "C++": 2,
+      "SQL": 4
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Get placed",
+      "Publish research"
+    ],
+    "good_at": [
+      "Coding",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Workshops"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 33,
+    "name": "Dev",
+    "department": "ISE",
+    "interests": [
+      "UI/UX",
+      "Robotics",
+      "Machine Learning"
+    ],
+    "hobbies": [
+      "Music",
+      "Gym"
+    ],
+    "skills": {
+      "Creativity": 3,
+      "SQL": 2,
+      "CSS": 5
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Build portfolio",
+      "Get internship"
+    ],
+    "good_at": [
+      "Leadership",
+      "Communication"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Seminars"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 34,
+    "name": "Nikhil",
+    "department": "AIML",
+    "interests": [
+      "Design",
+      "IoT",
+      "Cybersecurity"
+    ],
+    "hobbies": [
+      "Reading",
+      "DIY Projects"
+    ],
+    "skills": {
+      "JavaScript": 4,
+      "React": 4,
+      "Public Speaking": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Start startup",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Design",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 35,
+    "name": "Yash",
+    "department": "ISE",
+    "interests": [
+      "Data Science",
+      "Entrepreneurship",
+      "Music"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Gym"
+    ],
+    "skills": {
+      "JavaScript": 4,
+      "Public Speaking": 3,
+      "Communication": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Improve skills",
+      "Publish research"
+    ],
+    "good_at": [
+      "Creativity",
+      "Teamwork"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Meetups"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 36,
+    "name": "Suhas",
+    "department": "CSE",
+    "interests": [
+      "Cybersecurity",
+      "Machine Learning",
+      "Web Development"
+    ],
+    "hobbies": [
+      "Travelling",
+      "DIY Projects"
+    ],
+    "skills": {
+      "HTML": 5,
+      "Creativity": 1,
+      "Java": 2
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Publish research",
+      "Get internship"
+    ],
+    "good_at": [
+      "Leadership",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Workshops"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 37,
+    "name": "Tanvi",
+    "department": "EEE",
+    "interests": [
+      "Machine Learning",
+      "Robotics",
+      "Analytics"
+    ],
+    "hobbies": [
+      "Reading",
+      "Movies"
+    ],
+    "skills": {
+      "Java": 2,
+      "CSS": 2,
+      "React": 4
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Build portfolio",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Coding",
+      "Design"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 38,
+    "name": "Rohit",
+    "department": "Civil",
+    "interests": [
+      "Photography",
+      "AI",
+      "Analytics"
+    ],
+    "hobbies": [
+      "Gaming",
+      "Sketching"
+    ],
+    "skills": {
+      "Public Speaking": 5,
+      "SQL": 2,
+      "Problem Solving": 3
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Publish research",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Design",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 39,
+    "name": "Sanjana",
+    "department": "AIML",
+    "interests": [
+      "UI/UX",
+      "Cybersecurity",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Writing",
+      "Photography"
+    ],
+    "skills": {
+      "SQL": 1,
+      "JavaScript": 1,
+      "Public Speaking": 4
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Publish research",
+      "Get placed"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Cultural Events",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 40,
+    "name": "Harsh",
+    "department": "AIML",
+    "interests": [
+      "Entrepreneurship",
+      "Photography",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Sketching",
+      "DIY Projects"
+    ],
+    "skills": {
+      "SQL": 1,
+      "Leadership": 1,
+      "Communication": 4
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Get internship",
+      "Get placed"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Communication"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Meetups"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 41,
+    "name": "Asha",
+    "department": "ISE",
+    "interests": [
+      "Photography",
+      "Game Development",
+      "Design"
+    ],
+    "hobbies": [
+      "Cooking",
+      "Writing"
+    ],
+    "skills": {
+      "Java": 3,
+      "Problem Solving": 5,
+      "Communication": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Publish research",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Creativity",
+      "Design"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 42,
+    "name": "Asha",
+    "department": "Civil",
+    "interests": [
+      "Analytics",
+      "Data Science",
+      "Web Development"
+    ],
+    "hobbies": [
+      "Gym",
+      "Cooking"
+    ],
+    "skills": {
+      "CSS": 3,
+      "Problem Solving": 4,
+      "JavaScript": 2
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Get placed",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Seminars"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 43,
+    "name": "Tarun",
+    "department": "Civil",
+    "interests": [
+      "Analytics",
+      "Game Development",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Writing",
+      "Gym"
+    ],
+    "skills": {
+      "CSS": 5,
+      "Problem Solving": 2,
+      "C++": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Win hackathons",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Coding",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 44,
+    "name": "Rohini",
+    "department": "ECE",
+    "interests": [
+      "Game Development",
+      "UI/UX",
+      "Photography"
+    ],
+    "hobbies": [
+      "DIY Projects",
+      "Movies"
+    ],
+    "skills": {
+      "Creativity": 4,
+      "Leadership": 3,
+      "Communication": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Publish research",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Design"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 45,
+    "name": "Tarun",
+    "department": "AIDS",
+    "interests": [
+      "Data Science",
+      "AI",
+      "Web Development"
+    ],
+    "hobbies": [
+      "Music",
+      "Gym"
+    ],
+    "skills": {
+      "JavaScript": 3,
+      "Python": 4,
+      "SQL": 3
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Win hackathons",
+      "Publish research"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 46,
+    "name": "Neha",
+    "department": "Mechanical",
+    "interests": [
+      "Design",
+      "Machine Learning",
+      "IoT"
+    ],
+    "hobbies": [
+      "Reading",
+      "Dancing"
+    ],
+    "skills": {
+      "React": 2,
+      "Creativity": 4,
+      "Java": 1
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Win hackathons",
+      "Get placed"
+    ],
+    "good_at": [
+      "Creativity",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 47,
+    "name": "Dev",
+    "department": "ISE",
+    "interests": [
+      "Music",
+      "Marketing",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Photography",
+      "Reading"
+    ],
+    "skills": {
+      "React": 1,
+      "Communication": 5,
+      "Creativity": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get internship",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Creativity",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Workshops"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 48,
+    "name": "Lavanya",
+    "department": "EEE",
+    "interests": [
+      "Web Development",
+      "Music",
+      "Cybersecurity"
+    ],
+    "hobbies": [
+      "DIY Projects",
+      "Dancing"
+    ],
+    "skills": {
+      "JavaScript": 5,
+      "Python": 2,
+      "Public Speaking": 1
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Start startup",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Leadership",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Workshops"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 49,
+    "name": "Kavya",
+    "department": "AIDS",
+    "interests": [
+      "Robotics",
+      "Cybersecurity",
+      "Photography"
+    ],
+    "hobbies": [
+      "Sketching",
+      "Writing"
+    ],
+    "skills": {
+      "HTML": 5,
+      "Leadership": 2,
+      "CSS": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Publish research",
+      "Start startup"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Meetups"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 50,
+    "name": "Sita",
+    "department": "EEE",
+    "interests": [
+      "Robotics",
+      "Web Development",
+      "Music"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Dancing"
+    ],
+    "skills": {
+      "JavaScript": 3,
+      "Java": 1,
+      "Creativity": 2
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Publish research",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Creativity",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 51,
+    "name": "Harsh",
+    "department": "CSE",
+    "interests": [
+      "Game Development",
+      "Music",
+      "AI"
+    ],
+    "hobbies": [
+      "Reading",
+      "Gaming"
+    ],
+    "skills": {
+      "Communication": 4,
+      "HTML": 1,
+      "Leadership": 1
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Publish research",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Creativity",
+      "Coding"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 52,
+    "name": "Dev",
+    "department": "Biotech",
+    "interests": [
+      "Data Science",
+      "Robotics",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Photography",
+      "Sketching"
+    ],
+    "skills": {
+      "HTML": 1,
+      "Communication": 5,
+      "Problem Solving": 3
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Get internship",
+      "Get placed"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Coding"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Meetups"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 53,
+    "name": "Sita",
+    "department": "AIML",
+    "interests": [
+      "Game Development",
+      "Data Science",
+      "Web Development"
+    ],
+    "hobbies": [
+      "Movies",
+      "Gym"
+    ],
+    "skills": {
+      "Communication": 3,
+      "Problem Solving": 1,
+      "Creativity": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get internship",
+      "Start startup"
+    ],
+    "good_at": [
+      "Coding",
+      "Teamwork"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Meetups"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 54,
+    "name": "Diya",
+    "department": "AIDS",
+    "interests": [
+      "Music",
+      "Robotics",
+      "Cybersecurity"
+    ],
+    "hobbies": [
+      "Dancing",
+      "Travelling"
+    ],
+    "skills": {
+      "JavaScript": 4,
+      "SQL": 5,
+      "HTML": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get internship",
+      "Publish research"
+    ],
+    "good_at": [
+      "Creativity",
+      "Design"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 55,
+    "name": "Karan",
+    "department": "ISE",
+    "interests": [
+      "Design",
+      "Robotics",
+      "AI"
+    ],
+    "hobbies": [
+      "Writing",
+      "Music"
+    ],
+    "skills": {
+      "HTML": 3,
+      "JavaScript": 2,
+      "Creativity": 3
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Build portfolio",
+      "Start startup"
+    ],
+    "good_at": [
+      "Design",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Cultural Events",
+      "Seminars"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 56,
+    "name": "Riya",
+    "department": "ECE",
+    "interests": [
+      "Analytics",
+      "Data Science",
+      "Machine Learning"
+    ],
+    "hobbies": [
+      "Gaming",
+      "Movies"
+    ],
+    "skills": {
+      "Communication": 2,
+      "Leadership": 1,
+      "Public Speaking": 3
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Win hackathons",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Leadership",
+      "Communication"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Workshops"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 57,
+    "name": "Sneha",
+    "department": "Mechanical",
+    "interests": [
+      "Design",
+      "Analytics",
+      "Data Science"
+    ],
+    "hobbies": [
+      "Sketching",
+      "Reading"
+    ],
+    "skills": {
+      "SQL": 5,
+      "Creativity": 5,
+      "CSS": 1
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Build portfolio",
+      "Get internship"
+    ],
+    "good_at": [
+      "Coding",
+      "Communication"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 58,
+    "name": "Asha",
+    "department": "ISE",
+    "interests": [
+      "Design",
+      "Entrepreneurship",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Gym",
+      "Movies"
+    ],
+    "skills": {
+      "CSS": 1,
+      "SQL": 1,
+      "HTML": 3
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Get placed",
+      "Get internship"
+    ],
+    "good_at": [
+      "Design",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 59,
+    "name": "Rohini",
+    "department": "CSE",
+    "interests": [
+      "Photography",
+      "Game Development",
+      "Music"
+    ],
+    "hobbies": [
+      "Dancing",
+      "Movies"
+    ],
+    "skills": {
+      "Problem Solving": 5,
+      "Creativity": 2,
+      "HTML": 3
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Improve skills",
+      "Publish research"
+    ],
+    "good_at": [
+      "Design",
+      "Communication"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 60,
+    "name": "Rahul",
+    "department": "CSE",
+    "interests": [
+      "Marketing",
+      "Analytics",
+      "Web Development"
+    ],
+    "hobbies": [
+      "Photography",
+      "Cooking"
+    ],
+    "skills": {
+      "Java": 4,
+      "Problem Solving": 5,
+      "Creativity": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Win hackathons",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Communication",
+      "Coding"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 61,
+    "name": "Riya",
+    "department": "AIDS",
+    "interests": [
+      "Marketing",
+      "Entrepreneurship",
+      "Data Science"
+    ],
+    "hobbies": [
+      "Gaming",
+      "Reading"
+    ],
+    "skills": {
+      "Public Speaking": 2,
+      "Problem Solving": 4,
+      "CSS": 3
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get internship",
+      "Publish research"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 62,
+    "name": "Pranav",
+    "department": "AIML",
+    "interests": [
+      "Analytics",
+      "Music",
+      "Cybersecurity"
+    ],
+    "hobbies": [
+      "Gaming",
+      "Cooking"
+    ],
+    "skills": {
+      "React": 3,
+      "Java": 2,
+      "Problem Solving": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get placed",
+      "Start startup"
+    ],
+    "good_at": [
+      "Coding",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 63,
+    "name": "Rohit",
+    "department": "CSE",
+    "interests": [
+      "Photography",
+      "Game Development",
+      "Music"
+    ],
+    "hobbies": [
+      "Dancing",
+      "Writing"
+    ],
+    "skills": {
+      "Communication": 2,
+      "SQL": 4,
+      "Creativity": 3
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get internship",
+      "Get placed"
+    ],
+    "good_at": [
+      "Communication",
+      "Teamwork"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 64,
+    "name": "Diya",
+    "department": "EEE",
+    "interests": [
+      "Cybersecurity",
+      "Web Development",
+      "AI"
+    ],
+    "hobbies": [
+      "Gym",
+      "Cooking"
+    ],
+    "skills": {
+      "Public Speaking": 1,
+      "React": 3,
+      "Creativity": 4
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Start startup",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Workshops"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 65,
+    "name": "Harsh",
+    "department": "CSE",
+    "interests": [
+      "UI/UX",
+      "Photography",
+      "Design"
+    ],
+    "hobbies": [
+      "Writing",
+      "Cooking"
+    ],
+    "skills": {
+      "Communication": 4,
+      "CSS": 2,
+      "C++": 3
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Win hackathons",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Design",
+      "Communication"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 66,
+    "name": "Rohini",
+    "department": "ECE",
+    "interests": [
+      "Web Development",
+      "UI/UX",
+      "Photography"
+    ],
+    "hobbies": [
+      "Photography",
+      "Writing"
+    ],
+    "skills": {
+      "Problem Solving": 2,
+      "CSS": 1,
+      "Java": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get internship",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Leadership",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 67,
+    "name": "Riya",
+    "department": "CSE",
+    "interests": [
+      "AI",
+      "Web Development",
+      "Photography"
+    ],
+    "hobbies": [
+      "Cooking",
+      "Music"
+    ],
+    "skills": {
+      "HTML": 5,
+      "Problem Solving": 1,
+      "JavaScript": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Build portfolio",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Design",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 68,
+    "name": "Rohit",
+    "department": "CSE",
+    "interests": [
+      "Marketing",
+      "Design",
+      "Photography"
+    ],
+    "hobbies": [
+      "Gym",
+      "Cooking"
+    ],
+    "skills": {
+      "JavaScript": 3,
+      "Creativity": 4,
+      "Java": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get placed",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Creativity",
+      "Design"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Workshops"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 69,
+    "name": "Asha",
+    "department": "ECE",
+    "interests": [
+      "Game Development",
+      "Analytics",
+      "Photography"
+    ],
+    "hobbies": [
+      "Writing",
+      "Photography"
+    ],
+    "skills": {
+      "SQL": 3,
+      "Problem Solving": 4,
+      "React": 4
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Get placed",
+      "Start startup"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 70,
+    "name": "Sanjana",
+    "department": "Mechanical",
+    "interests": [
+      "Game Development",
+      "Marketing",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Sketching",
+      "Writing"
+    ],
+    "skills": {
+      "Communication": 5,
+      "C++": 4,
+      "HTML": 2
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Improve skills",
+      "Get placed"
+    ],
+    "good_at": [
+      "Communication",
+      "Design"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 71,
+    "name": "Tanvi",
+    "department": "Biotech",
+    "interests": [
+      "Design",
+      "Cybersecurity",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Gaming",
+      "Sketching"
+    ],
+    "skills": {
+      "Problem Solving": 4,
+      "Java": 4,
+      "JavaScript": 4
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Publish research",
+      "Get internship"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Design"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 72,
+    "name": "Manoj",
+    "department": "Civil",
+    "interests": [
+      "UI/UX",
+      "Machine Learning",
+      "Cybersecurity"
+    ],
+    "hobbies": [
+      "DIY Projects",
+      "Music"
+    ],
+    "skills": {
+      "CSS": 2,
+      "C++": 1,
+      "React": 5
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Build portfolio",
+      "Get internship"
+    ],
+    "good_at": [
+      "Creativity",
+      "Communication"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Workshops"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 73,
+    "name": "Varun",
+    "department": "Civil",
+    "interests": [
+      "AI",
+      "Music",
+      "IoT"
+    ],
+    "hobbies": [
+      "Music",
+      "Cooking"
+    ],
+    "skills": {
+      "HTML": 5,
+      "CSS": 4,
+      "Python": 4
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Win hackathons",
+      "Get internship"
+    ],
+    "good_at": [
+      "Communication",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 74,
+    "name": "Sita",
+    "department": "ISE",
+    "interests": [
+      "Game Development",
+      "Design",
+      "Data Science"
+    ],
+    "hobbies": [
+      "Movies",
+      "DIY Projects"
+    ],
+    "skills": {
+      "Problem Solving": 4,
+      "Creativity": 3,
+      "JavaScript": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Start startup",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Design",
+      "Communication"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 75,
+    "name": "Manoj",
+    "department": "AIDS",
+    "interests": [
+      "Music",
+      "UI/UX",
+      "IoT"
+    ],
+    "hobbies": [
+      "Gym",
+      "Movies"
+    ],
+    "skills": {
+      "CSS": 5,
+      "JavaScript": 3,
+      "Creativity": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get placed",
+      "Publish research"
+    ],
+    "good_at": [
+      "Design",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Workshops"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 76,
+    "name": "Manoj",
+    "department": "ECE",
+    "interests": [
+      "Robotics",
+      "Music",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Music"
+    ],
+    "skills": {
+      "Java": 4,
+      "Public Speaking": 5,
+      "SQL": 1
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Start startup",
+      "Get internship"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Competitions"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 77,
+    "name": "Pranav",
+    "department": "EEE",
+    "interests": [
+      "Marketing",
+      "Photography",
+      "Analytics"
+    ],
+    "hobbies": [
+      "Music",
+      "Reading"
+    ],
+    "skills": {
+      "Communication": 2,
+      "HTML": 4,
+      "Public Speaking": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Publish research",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Communication",
+      "Design"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 78,
+    "name": "Dev",
+    "department": "Biotech",
+    "interests": [
+      "Web Development",
+      "Cybersecurity",
+      "Analytics"
+    ],
+    "hobbies": [
+      "Photography",
+      "Gaming"
+    ],
+    "skills": {
+      "Python": 4,
+      "SQL": 5,
+      "C++": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Win hackathons",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Coding"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 79,
+    "name": "Ajay",
+    "department": "Mechanical",
+    "interests": [
+      "Game Development",
+      "Cybersecurity",
+      "Machine Learning"
+    ],
+    "hobbies": [
+      "Sketching",
+      "Movies"
+    ],
+    "skills": {
+      "Public Speaking": 2,
+      "JavaScript": 1,
+      "React": 3
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Improve skills",
+      "Get internship"
+    ],
+    "good_at": [
+      "Creativity",
+      "Communication"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 80,
+    "name": "Asha",
+    "department": "ISE",
+    "interests": [
+      "Data Science",
+      "Photography",
+      "IoT"
+    ],
+    "hobbies": [
+      "DIY Projects",
+      "Reading"
+    ],
+    "skills": {
+      "Leadership": 2,
+      "HTML": 4,
+      "Public Speaking": 2
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Build portfolio",
+      "Publish research"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 81,
+    "name": "Kavya",
+    "department": "CSE",
+    "interests": [
+      "Photography",
+      "UI/UX",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Photography",
+      "Movies"
+    ],
+    "skills": {
+      "React": 4,
+      "JavaScript": 4,
+      "Problem Solving": 1
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Build portfolio",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Design",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Cultural Events",
+      "Meetups"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 82,
+    "name": "Nikhil",
+    "department": "AIDS",
+    "interests": [
+      "Photography",
+      "Cybersecurity",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Sketching",
+      "Music"
+    ],
+    "skills": {
+      "React": 1,
+      "CSS": 3,
+      "Problem Solving": 5
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Get internship",
+      "Build portfolio"
+    ],
+    "good_at": [
+      "Leadership",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 83,
+    "name": "Harsh",
+    "department": "Civil",
+    "interests": [
+      "AI",
+      "Marketing",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Gaming",
+      "Movies"
+    ],
+    "skills": {
+      "JavaScript": 1,
+      "Public Speaking": 4,
+      "Problem Solving": 1
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Improve skills",
+      "Get placed"
+    ],
+    "good_at": [
+      "Leadership",
+      "Communication"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 84,
+    "name": "Yash",
+    "department": "Mechanical",
+    "interests": [
+      "Web Development",
+      "Entrepreneurship",
+      "Photography"
+    ],
+    "hobbies": [
+      "Photography",
+      "Gaming"
+    ],
+    "skills": {
+      "Leadership": 1,
+      "Python": 1,
+      "Problem Solving": 3
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Win hackathons",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Communication"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Meetups"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 85,
+    "name": "Rahul",
+    "department": "ECE",
+    "interests": [
+      "Design",
+      "Marketing",
+      "Web Development"
+    ],
+    "hobbies": [
+      "Music",
+      "Travelling"
+    ],
+    "skills": {
+      "Problem Solving": 3,
+      "Java": 3,
+      "JavaScript": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Publish research",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Communication",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Meetups"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 86,
+    "name": "Rohit",
+    "department": "ISE",
+    "interests": [
+      "Music",
+      "Photography",
+      "Cybersecurity"
+    ],
+    "hobbies": [
+      "Gym",
+      "Travelling"
+    ],
+    "skills": {
+      "CSS": 5,
+      "JavaScript": 5,
+      "Creativity": 5
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Win hackathons",
+      "Get internship"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Teamwork"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Workshops"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 87,
+    "name": "Rohini",
+    "department": "ISE",
+    "interests": [
+      "Game Development",
+      "Data Science",
+      "Robotics"
+    ],
+    "hobbies": [
+      "Movies",
+      "Gaming"
+    ],
+    "skills": {
+      "Java": 5,
+      "Public Speaking": 5,
+      "HTML": 3
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Build portfolio",
+      "Get internship"
+    ],
+    "good_at": [
+      "Problem Solving",
+      "Design"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 88,
+    "name": "Rohit",
+    "department": "EEE",
+    "interests": [
+      "Photography",
+      "Robotics",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Writing",
+      "Gaming"
+    ],
+    "skills": {
+      "Python": 2,
+      "CSS": 3,
+      "C++": 4
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Get placed",
+      "Publish research"
+    ],
+    "good_at": [
+      "Design",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Competitions"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 89,
+    "name": "Lavanya",
+    "department": "ECE",
+    "interests": [
+      "Marketing",
+      "AI",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Reading",
+      "Music"
+    ],
+    "skills": {
+      "Creativity": 5,
+      "Problem Solving": 2,
+      "SQL": 2
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Start startup",
+      "Get placed"
+    ],
+    "good_at": [
+      "Creativity",
+      "Coding"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Meetups"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 90,
+    "name": "Karan",
+    "department": "Mechanical",
+    "interests": [
+      "Marketing",
+      "Machine Learning",
+      "Game Development"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Movies"
+    ],
+    "skills": {
+      "JavaScript": 1,
+      "Communication": 3,
+      "Leadership": 2
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Get placed",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Creativity",
+      "Problem Solving"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 91,
+    "name": "Suhas",
+    "department": "Biotech",
+    "interests": [
+      "Marketing",
+      "Machine Learning",
+      "Design"
+    ],
+    "hobbies": [
+      "Dancing",
+      "Movies"
+    ],
+    "skills": {
+      "React": 5,
+      "CSS": 5,
+      "Communication": 4
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Start startup",
+      "Get internship"
+    ],
+    "good_at": [
+      "Design",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Time Management"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 92,
+    "name": "Kavya",
+    "department": "EEE",
+    "interests": [
+      "UI/UX",
+      "Music",
+      "AI"
+    ],
+    "hobbies": [
+      "Sketching",
+      "Travelling"
+    ],
+    "skills": {
+      "Communication": 3,
+      "React": 1,
+      "CSS": 3
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Start startup",
+      "Get internship"
+    ],
+    "good_at": [
+      "Communication",
+      "Teamwork"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Seminars",
+      "Meetups"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 93,
+    "name": "Rahul",
+    "department": "Civil",
+    "interests": [
+      "IoT",
+      "Analytics",
+      "Photography"
+    ],
+    "hobbies": [
+      "Movies",
+      "Dancing"
+    ],
+    "skills": {
+      "React": 1,
+      "Java": 5,
+      "Problem Solving": 2
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Improve skills",
+      "Get placed"
+    ],
+    "good_at": [
+      "Design",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Cultural Events",
+      "Seminars"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 94,
+    "name": "Ajay",
+    "department": "AIML",
+    "interests": [
+      "Design",
+      "Web Development",
+      "AI"
+    ],
+    "hobbies": [
+      "Gaming",
+      "Music"
+    ],
+    "skills": {
+      "HTML": 4,
+      "CSS": 2,
+      "JavaScript": 5
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Build portfolio",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Leadership",
+      "Design"
+    ],
+    "bad_at": [
+      "Coding Logic"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Workshops"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 95,
+    "name": "Harsh",
+    "department": "ECE",
+    "interests": [
+      "Photography",
+      "Cybersecurity",
+      "Analytics"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Sketching"
+    ],
+    "skills": {
+      "SQL": 5,
+      "CSS": 2,
+      "Leadership": 2
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Get internship",
+      "Get placed"
+    ],
+    "good_at": [
+      "Creativity",
+      "Design"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Hackathons",
+      "Cultural Events"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 96,
+    "name": "Suhas",
+    "department": "ECE",
+    "interests": [
+      "Machine Learning",
+      "Analytics",
+      "UI/UX"
+    ],
+    "hobbies": [
+      "Movies",
+      "Dancing"
+    ],
+    "skills": {
+      "SQL": 2,
+      "Java": 5,
+      "React": 2
+    },
+    "learning_stage": "Advanced",
+    "goals": [
+      "Start startup",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Teamwork",
+      "Communication"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 97,
+    "name": "Pranav",
+    "department": "CSE",
+    "interests": [
+      "Cybersecurity",
+      "UI/UX",
+      "Robotics"
+    ],
+    "hobbies": [
+      "Travelling",
+      "Gaming"
+    ],
+    "skills": {
+      "CSS": 1,
+      "Java": 4,
+      "C++": 3
+    },
+    "learning_stage": "Beginner",
+    "goals": [
+      "Win hackathons",
+      "Publish research"
+    ],
+    "good_at": [
+      "Communication",
+      "Leadership"
+    ],
+    "bad_at": [
+      "Leadership"
+    ],
+    "preferred_activities": [
+      "Cultural Events",
+      "Hackathons"
+    ],
+    "availability": [
+      "Weekends"
+    ]
+  },
+  {
+    "student_id": 98,
+    "name": "Pooja",
+    "department": "ISE",
+    "interests": [
+      "IoT",
+      "Web Development",
+      "Analytics"
+    ],
+    "hobbies": [
+      "Reading",
+      "Gym"
+    ],
+    "skills": {
+      "Problem Solving": 1,
+      "HTML": 3,
+      "Public Speaking": 2
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Get internship",
+      "Get placed"
+    ],
+    "good_at": [
+      "Creativity",
+      "Coding"
+    ],
+    "bad_at": [
+      "Confidence"
+    ],
+    "preferred_activities": [
+      "Meetups",
+      "Competitions"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  },
+  {
+    "student_id": 99,
+    "name": "Pranav",
+    "department": "AIML",
+    "interests": [
+      "Machine Learning",
+      "UI/UX",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Sketching",
+      "Reading"
+    ],
+    "skills": {
+      "Java": 5,
+      "HTML": 4,
+      "Python": 2
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Build portfolio",
+      "Win hackathons"
+    ],
+    "good_at": [
+      "Communication",
+      "Creativity"
+    ],
+    "bad_at": [
+      "Writing"
+    ],
+    "preferred_activities": [
+      "Competitions",
+      "Workshops"
+    ],
+    "availability": [
+      "Weekdays"
+    ]
+  },
+  {
+    "student_id": 100,
+    "name": "Lavanya",
+    "department": "ISE",
+    "interests": [
+      "Marketing",
+      "Game Development",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Movies",
+      "Music"
+    ],
+    "skills": {
+      "Java": 4,
+      "React": 2,
+      "Leadership": 2
+    },
+    "learning_stage": "Intermediate",
+    "goals": [
+      "Get internship",
+      "Improve skills"
+    ],
+    "good_at": [
+      "Communication",
+      "Coding"
+    ],
+    "bad_at": [
+      "Public Speaking"
+    ],
+    "preferred_activities": [
+      "Workshops",
+      "Meetups"
+    ],
+    "availability": [
+      "Evenings"
+    ]
+  }
+]
