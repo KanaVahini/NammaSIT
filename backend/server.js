@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const path = require("path");
 const { spawn } = require("child_process");
-const User = require("./models/User");
+const User = require("./models/user");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
