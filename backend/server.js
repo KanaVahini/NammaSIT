@@ -12,14 +12,26 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // CORS
-app.use(cors({ origin: "http://localhost:5173" }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.FRONTEND_URL || ""
+];
+app.use(cors({ 
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+}));
 app.use(express.json());
 
 // Static uploads folder
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // ---------- MongoDB Connection ----------
-const MONGO_URL =
+const MONGO_URL = process.env.MONGODB_URI || 
   "mongodb+srv://AL207_db_user:6zqTgpJnWoEu8NLY@cluster1.rws35gx.mongodb.net/sit4u?retryWrites=true&w=majority";
 
 mongoose

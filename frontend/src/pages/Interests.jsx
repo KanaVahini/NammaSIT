@@ -135,7 +135,8 @@ export default function Interests() {
       skills: Object.fromEntries(selected.skills.map(s => [s, 3]))
     };
 
-    const res = await fetch("http://localhost:5000/predict", {
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    const res = await fetch(`${API_URL}/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
