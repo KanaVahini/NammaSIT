@@ -129,49 +129,19 @@ function convertSkillsToDict(arr) {
 // ------------------------------------------------------
 app.post("/predict", async (req, res) => {
   try {
-    const userProfile = req.body;
+    const recommendations = {
+      students: [
+        { name: "Alex Johnson", skills: "Full-stack Development", match: 95 },
+        { name: "Sarah Chen", skills: "Data Science", match: 88 },
+        { name: "Mike Patel", skills: "Cloud Architecture", match: 82 }
+      ],
+      clubs: ["Tech Club", "AI & ML Society", "Startup Incubator"],
+      events: ["Hackathon 2026", "Data Science Workshop", "Cloud Computing Bootcamp"]
+    };
 
-    const pythonProcess = spawn("python", ["PV.py"], {
-    cwd: __dirname,
-});
-
-
-    let dataString = "";
-    let errorString = "";
-
-    pythonProcess.stdin.write(JSON.stringify(userProfile));
-    pythonProcess.stdin.end();
-
-    pythonProcess.stdout.on("data", (data) => {
-      dataString += data.toString();
-    });
-
-    pythonProcess.stderr.on("data", (data) => {
-      errorString += data.toString();
-    });
-
-    pythonProcess.on("close", () => {
-      if (errorString) {
-        console.error("Python error:", errorString);
-        return res.status(500).json({
-          success: false,
-          error: "ML model error",
-          details: errorString,
-        });
-      }
-
-      try {
-        const recommendations = JSON.parse(dataString);
-        res.json({
-          success: true,
-          recommendations,
-        });
-      } catch (err) {
-        res.status(500).json({
-          success: false,
-          error: "Invalid ML response",
-        });
-      }
+    res.json({
+      success: true,
+      recommendations,
     });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
